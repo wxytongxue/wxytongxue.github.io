@@ -3,21 +3,39 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Hello World | 学而知码，写而造轮</title>
+    <title>对多值依赖的理解 | 学而知码，写而造轮</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+    <meta name="description" content="在关系数据库设计中的函数依赖理论中有一个多值依赖，对多值依赖的理解现做如下整理：
+搜寻资料发现对多值依赖的讲解无非都用了两个关系模式的例子：
+
+1.Teching（物理，老师，资料）
+2.Storehouse（仓库管理员，仓库号，库存产品号）
+
+首先说到多值依赖就会想到函数依赖，函数依赖规定了某些元组不能出现在关系中。如果A-&amp;gt;B成立，我们就不能有两个元组在A上的值相同而在B上的值不同。而多">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://wxy-cs.com/2016/10/03/hello-world/index.html">
+<meta property="og:title" content="对多值依赖的理解">
+<meta property="og:url" content="http://wxy-cs.com/2016/10/03/maltivalued-dependence/index.html">
 <meta property="og:site_name" content="学而知码，写而造轮">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-10-03T04:00:50.912Z">
+<meta property="og:description" content="在关系数据库设计中的函数依赖理论中有一个多值依赖，对多值依赖的理解现做如下整理：
+搜寻资料发现对多值依赖的讲解无非都用了两个关系模式的例子：
+
+1.Teching（物理，老师，资料）
+2.Storehouse（仓库管理员，仓库号，库存产品号）
+
+首先说到多值依赖就会想到函数依赖，函数依赖规定了某些元组不能出现在关系中。如果A-&amp;gt;B成立，我们就不能有两个元组在A上的值相同而在B上的值不同。而多">
+<meta property="og:image" content="http://o77440kb4.bkt.clouddn.com/2016-05-18%2016-43-20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
+<meta property="og:image" content="http://o77440kb4.bkt.clouddn.com/2016-05-18%2016-41-27%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
+<meta property="og:updated_time" content="2016-10-03T11:02:05.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="对多值依赖的理解">
+<meta name="twitter:description" content="在关系数据库设计中的函数依赖理论中有一个多值依赖，对多值依赖的理解现做如下整理：
+搜寻资料发现对多值依赖的讲解无非都用了两个关系模式的例子：
+
+1.Teching（物理，老师，资料）
+2.Storehouse（仓库管理员，仓库号，库存产品号）
+
+首先说到多值依赖就会想到函数依赖，函数依赖规定了某些元组不能出现在关系中。如果A-&amp;gt;B成立，我们就不能有两个元组在A上的值相同而在B上的值不同。而多">
+<meta name="twitter:image" content="http://o77440kb4.bkt.clouddn.com/2016-05-18%2016-43-20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
     
 
     
@@ -204,7 +222,7 @@ Quick">
 </aside>
 
             
-            <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-maltivalued-dependence" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -212,7 +230,7 @@ Quick">
                 
     
         <h1 class="article-title" itemprop="name">
-            Hello World
+            对多值依赖的理解
         </h1>
     
 
@@ -221,14 +239,24 @@ Quick">
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/10/03/hello-world/">
-            <time datetime="2016-10-03T04:00:50.912Z" itemprop="datePublished">2016-10-03</time>
+        <a href="/2016/10/03/maltivalued-dependence/">
+            <time datetime="2016-10-03T10:59:31.000Z" itemprop="datePublished">2016-10-03</time>
         </a>
     </div>
 
 
                         
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/技术/">技术</a>
+    </div>
+
                         
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/数据库/">数据库</a>
+    </div>
+
                     </div>
                 
             </header>
@@ -237,15 +265,81 @@ Quick">
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+            <p>在关系数据库设计中的函数依赖理论中有一个<strong>多值依赖</strong>，对多值依赖的理解现做如下整理：</p>
+<p>搜寻资料发现对多值依赖的讲解无非都用了两个关系模式的例子：</p>
+<ul>
+<li>1.Teching（物理，老师，资料）</li>
+<li>2.Storehouse（仓库管理员，仓库号，库存产品号）</li>
+</ul>
+<p>首先说到多值依赖就会想到<strong>函数依赖</strong>，函数依赖规定了某些元组不能出现在关系中。如果A-&gt;B成立，我们就不能有两个元组在A上的值相同而在B上<br>的值不同。而多值依赖却可以不排除这些元组的存在，所以函数依赖有时候又叫<strong>相等产生的依赖</strong>，而多值依赖又叫<strong>元组产生的依赖</strong>。</p>
+<p>多值依赖从名字上看的理解是<strong>多个值依赖于同一个值</strong></p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a><a href="#定义" title="定义"></a>定义</h3><p>设R（U）是属性集U上的一个关系模式，X，Y，Z是U的子集，并且Z=U-X-Z。关系模式R上X-&gt;-&gt;Y成立，当且仅当对R（U）中的任意一个关系r,给定一对<br>（X，Z）值，有一组Y的值与之对应，这组值仅仅取决于X的值，而<strong>与Z的值无关</strong>。</p>
+<p>看定义很模糊，来看一个例子（来自《数据库系统概念》):</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>dept_name</th>
+<th>street</th>
+<th>city</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22222</td>
+<td>Physics</td>
+<td>North</td>
+<td>Rye</td>
+</tr>
+<tr>
+<td>22222</td>
+<td>Physics</td>
+<td>Main</td>
+<td>Manchester</td>
+</tr>
+<tr>
+<td>12121</td>
+<td>Finance</td>
+<td>Lake</td>
+<td>Horseneck</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>是一个大学的关系模型，ID为教师的ID，一个教师有多个地址</p>
+</blockquote>
+<p>我们按照定义来看一下，一个ID值有多个（street,city）与之对应。将ID看成X，将（street，city）看成Y，将dept_name看成Z，Z=U-X-Y,而且给定<br>一组（X,Z）的值（我们选（2222，physics））有一组Y值与之对应（（North,Rye）,(Main,Manchester)）,所以可以说 <strong>ID-&gt;-&gt;street city</strong></p>
+<p>现在我们再来看一下开头说的两个例子:</p>
+<ul>
+<li>例l： 学校中某一门课程由多个教员讲授，他们使用相同的一套参考书。每个教员可以讲授多门课程，每种参考书可以供多门课程使用。我们可以用一个非规范化的关系来表示教员T,课程C和参考书B之间的关系：</li>
+</ul>
+<p>课程C　教员T　参考书B<br>-————————————<br>物理　　李勇　普通物理学<br>　　　　王 军　光学原理<br>　　　　　　　物理习题集<br>-————————————<br>数学　　李 勇　数学分析<br>　　　　张 平　微分方程<br>　　　　　　　　高等代数</p>
+<blockquote>
+<p>该关系模式存在全码(C,T,B),因此该关系模式属于BCNF范式</p>
+</blockquote>
+<p>我们再来用多值依赖的定义来看一下这个关系模式：<br>对于一个（物理，光学原理）有一组T值{李勇，王军}与之对应，但这组值仅仅取决于（物理），也就是说对于另一（物理，普通物理学），它对应的<br>这组值仍然是{李勇，王军}，所以{李勇，王军}其实就是Z，物理是X，（普通物理学，光学原理，物理习题集）就是一组Y，<strong>C-&gt;-&gt;B</strong>成立！</p>
+<ul>
+<li>例2：有这样一个关系 &lt;仓库管理员，仓库号，库存产品号&gt; ，假设一个产品只能放到一个仓库中，但是一个仓库可以有若干管理员。</li>
+</ul>
+<p>我们取一个（仓库管理员，仓库号），与之有一组库存产品号与之对应，而与仓库管理员无关，所以<strong>仓库号-&gt;-&gt;库存产品号</strong>,而这里面也存在<br><strong>仓库号-&gt;-&gt;仓库管理员</strong>,而与库存产品号无关。</p>
+<h3 id="推论"><a href="#推论" class="headerlink" title="推论"></a><a href="#推论" title="推论"></a>推论</h3><ul>
+<li>1.如果将对应一组Y值改为<strong>一个</strong>Y值，多值依赖就变成<strong>函数依赖</strong>了，所以可以说<strong>函数依赖是特殊的多值依赖</strong>。</li>
+<li>2.若X-&gt;-&gt;Y，且Z为空集，则称X-&gt;-&gt;Y为<strong>平凡的多值依赖</strong>,否则称为<strong>非平凡的多值依赖</strong>。</li>
+</ul>
+<h3 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a><a href="#存在的问题" title="存在的问题"></a>存在的问题</h3><ul>
+<li>1.冗余大</li>
+<li>2.插入复杂</li>
+<li>3.更新复杂</li>
+<li>4.删除复杂</li>
+</ul>
+<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a><a href="#性质" title="性质"></a>性质</h3><ul>
+<li><p>1.对称性<br>若X-&gt;-&gt;Y,则X-&gt;-&gt;Z，其中Z=U-X-Y</p>
+</li>
+<li><p>2.传递性<br>若X-&gt;-&gt;Y, Y-&gt;-&gt;Z,则X-&gt;-&gt;Z</p>
+</li>
+</ul>
+<p>对称性:<br><img src="http://o77440kb4.bkt.clouddn.com/2016-05-18%2016-43-20%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt=""><br><img src="http://o77440kb4.bkt.clouddn.com/2016-05-18%2016-41-27%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt=""></p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献:"></a><a href="#参考文献" title="参考文献:"></a>参考文献:</h3><p>1.《数据库系统概念》， 杨冬青、李红燕、唐世渭，北京：机械工业出版社，2012<br>2.《数据库系统概论》，王珊、萨师煊，北京：高等教育出版社，2014</p>
 
         
         </div>
@@ -256,7 +350,7 @@ Quick">
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/03/hello-world/" data-id="citty5roc0000uo6xksaldhi7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/03/maltivalued-dependence/" data-id="citty5ror0002uo6xf4p5zhww" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -324,7 +418,7 @@ Quick">
 
             
     
-        <a href="http://wxy-cs.com/2016/10/03/hello-world/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/03/hello-world/">Comments</a>
+        <a href="http://wxy-cs.com/2016/10/03/maltivalued-dependence/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/03/maltivalued-dependence/">Comments</a>
     
 
         </footer>
@@ -333,15 +427,11 @@ Quick">
         
 <nav id="article-nav">
     
-        <a href="/2016/10/03/test/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    test
-                
-            </div>
-        </a>
     
+        <a href="/2016/10/03/test/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">test</div>
+        </a>
     
 </nav>
 
@@ -354,7 +444,7 @@ Quick">
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="2016/10/03/hello-world/" data-title="Hello World" data-url="http://wxy-cs.com/2016/10/03/hello-world/"></div>
+    <div class="ds-thread" data-thread-key="2016/10/03/maltivalued-dependence/" data-title="对多值依赖的理解" data-url="http://wxy-cs.com/2016/10/03/maltivalued-dependence/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
