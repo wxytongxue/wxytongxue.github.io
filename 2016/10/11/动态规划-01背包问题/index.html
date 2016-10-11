@@ -5,30 +5,30 @@
     
     <title>动态规划-01背包问题 | 学而知码，写而造轮</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="01背包问题是动态规划里的经典问题。动态规划的核心是找到状态和状态转换方程。
+    <meta name="description" content="01背包问题是动态规划里的经典问题。动态规划的核心是找到状态和状态转移方程。
 
 01背包问题的状态是 f[i,j] ：在前i件物品中选取若干件物品放在容量为j的背包里，可以获得的最大价值. 
-01背包问题的状态转换方程为 f[i,j]=max{f[i-1,j-wi]+pi,f[i-1,j]}(j&amp;gt;=wi)
+01背包问题的状态转移方程为 f[i,j]=max{f[i-1,j-wi]+pi,f[i-1,j]}(j&amp;gt;=wi)
 
 例子有编号分别为a,b,c,d,e的五件物品，它们的重量分别是2,2,6,5,4，它">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动态规划-01背包问题">
 <meta property="og:url" content="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/index.html">
 <meta property="og:site_name" content="学而知码，写而造轮">
-<meta property="og:description" content="01背包问题是动态规划里的经典问题。动态规划的核心是找到状态和状态转换方程。
+<meta property="og:description" content="01背包问题是动态规划里的经典问题。动态规划的核心是找到状态和状态转移方程。
 
 01背包问题的状态是 f[i,j] ：在前i件物品中选取若干件物品放在容量为j的背包里，可以获得的最大价值. 
-01背包问题的状态转换方程为 f[i,j]=max{f[i-1,j-wi]+pi,f[i-1,j]}(j&amp;gt;=wi)
+01背包问题的状态转移方程为 f[i,j]=max{f[i-1,j-wi]+pi,f[i-1,j]}(j&amp;gt;=wi)
 
 例子有编号分别为a,b,c,d,e的五件物品，它们的重量分别是2,2,6,5,4，它">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/6fb56e14gw1eh0qcoa8dwj20jg0el76y.jpg">
-<meta property="og:updated_time" content="2016-10-11T07:17:10.891Z">
+<meta property="og:updated_time" content="2016-10-11T07:26:05.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划-01背包问题">
-<meta name="twitter:description" content="01背包问题是动态规划里的经典问题。动态规划的核心是找到状态和状态转换方程。
+<meta name="twitter:description" content="01背包问题是动态规划里的经典问题。动态规划的核心是找到状态和状态转移方程。
 
 01背包问题的状态是 f[i,j] ：在前i件物品中选取若干件物品放在容量为j的背包里，可以获得的最大价值. 
-01背包问题的状态转换方程为 f[i,j]=max{f[i-1,j-wi]+pi,f[i-1,j]}(j&amp;gt;=wi)
+01背包问题的状态转移方程为 f[i,j]=max{f[i-1,j-wi]+pi,f[i-1,j]}(j&amp;gt;=wi)
 
 例子有编号分别为a,b,c,d,e的五件物品，它们的重量分别是2,2,6,5,4，它">
 <meta name="twitter:image" content="http://ww2.sinaimg.cn/large/6fb56e14gw1eh0qcoa8dwj20jg0el76y.jpg">
@@ -263,13 +263,17 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>01背包问题是<strong>动态规划</strong>里的经典问题。<br>动态规划的核心是找到<strong>状态</strong>和<strong>状态转换方程</strong>。</p>
+            <p>01背包问题是<strong>动态规划</strong>里的经典问题。<br>动态规划的核心是找到<strong>状态</strong>和<strong>状态转移方程</strong>。</p>
 <ul>
 <li>01背包问题的状态是 <strong>f[i,j]</strong> ：在前i件物品中选取若干件物品放在容量为j的背包里，可以获得的最大价值. </li>
-<li>01背包问题的状态转换方程为 <strong>f[i,j]=max{f[i-1,j-wi]+pi,f[i-1,j]}(j&gt;=wi)</strong></li>
+<li>01背包问题的状态转移方程为 <strong>f[i,j]=max{f[i-1,j-wi]+pi,f[i-1,j]}(j&gt;=wi)</strong></li>
 </ul>
 <h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>有编号分别为a,b,c,d,e的五件物品，它们的重量分别是2,2,6,5,4，它们的价值分别是6,3,5,4,6，现在给你个承重为10的背包，如何让背包里装入的物品具有最大的价值总和？<br><img src="http://o77440kb4.bkt.clouddn.com/2016-10-11%2014-58-11%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt=""><br>注:<strong>e2代表只有物品e时，背包容量为2时，所能获得的最大价值，b2代表只有b c d e物品时，背包容量为2，所能获得的最大价值。</strong></p>
-<h3 id="a8-15是如何来的？"><a href="#a8-15是如何来的？" class="headerlink" title="a8=15是如何来的？"></a>a8=15是如何来的？</h3><p>按照状态转换方程f[i,j]=max{f[i-1,j-wi]+pi,f[i-1,j]}得：<br>f[i-1,j-wi]为单元格b6：<strong>只有b c d e几件物品，背包容量为6时，所能获取的最大价值</strong><br>f[i-1,j]为单元格b8：<strong>只有b c d e物品，背包容量为8时，所能获得的最大价值</strong><br>由表格得：f[i-1,j-wi]+wi=9+6=15  f[i-1,j]=9  所以a8=15</p>
+<h3 id="a8-15是如何来的？"><a href="#a8-15是如何来的？" class="headerlink" title="a8=15是如何来的？"></a>a8=15是如何来的？</h3><p>按照状态转换方程f[i,j]=max{f[i-1,j-wi]+pi,f[i-1,j]}得：<br>f[i-1,j-wi]为单元格b6：<strong>只有b c d e几件物品，背包容量为6时，所能获取的最大价值</strong><br>f[i-1,j]为单元格b8：<strong>只有b c d e物品，背包容量为8时，所能获得的最大价值</strong><br>由表格得：<strong>f[i-1,j-wi]+wi=9+6=15  f[i-1,j]=9  所以a8=15</strong></p>
+<p><strong>对于动态规划问题相关知识点:</strong></p>
+<blockquote>
+<p>重叠子问题<br>例如Fibonacci数列，如果计算第100项，依旧需要计算第99项和第98项时，这就称作<strong>重叠子问题</strong><br>无后效性、最优子结构<br>如果状态转移方程的等式右边不会用到下标大于左边的i或k时，这就是<strong>无后效性</strong>,符合这种定义的状态定义就称为<strong>最优子结构</strong></p>
+</blockquote>
 <p>注：以上图片、文字均有部分参考自网络，如有侵权请及时告知，将在24小时内删除！</p>
 
         
@@ -281,7 +285,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/" data-id="ciu54hpqs0004r86x9kfgqsld" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/" data-id="ciu55yo5r0008hw6xo4ffmvat" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
