@@ -153,11 +153,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                8
+                9
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                4
+                5
                 <span>tags</span>
             </div>
         </div>
@@ -200,6 +200,137 @@
 
             
             <section id="main">
+    <article id="post-闭包" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/10/13/闭包/">闭包</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/10/13/闭包/">
+            <time datetime="2016-10-13T13:57:48.000Z" itemprop="datePublished">2016-10-13</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/技术/">技术</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://wxy-cs.com/2016/10/13/闭包/" data-id="ciu8fr1pe000nff6xjy6wjb5s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://wxy-cs.com/2016/10/13/闭包/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/13/闭包/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-尾递归" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -267,7 +398,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/13/尾递归/" data-id="ciu8bus7v000kw16xxkhvn84q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/13/尾递归/" data-id="ciu8fr1op000gff6xenjn2q4t" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -523,7 +654,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/" data-id="ciu8bus7p000gw16xghthdvtf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/" data-id="ciu8fr1oa000eff6xw0eoc4cy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -673,7 +804,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/12/贪心算法/" data-id="ciu8bus7z000nw16xycb0kptq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/12/贪心算法/" data-id="ciu8fr1pa000kff6xssmxluwr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -821,7 +952,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/" data-id="ciu8bus7h000aw16x0bp6tk10" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/" data-id="ciu8fr1n00008ff6x8ks9qoa8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1013,7 +1144,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/" data-id="ciu8bus7m000ew16x115eorgf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/" data-id="ciu8fr1nq000aff6xow9nzscj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1152,7 +1283,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/" data-id="ciu8bus650000w16xtzz3vk4g" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/" data-id="ciu8fr1kn0000ff6xsrg9c8k0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1287,7 +1418,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/05/18/sql-server/" data-id="ciu8bus6w0006w16xdecwic0t" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/05/18/sql-server/" data-id="ciu8fr1mk0006ff6xnrgg1l3s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1493,7 +1624,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/05/18/maltivalued-dependence/" data-id="ciu8bus6f0002w16xkdp58bal" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/05/18/maltivalued-dependence/" data-id="ciu8fr1l90002ff6x2663iqhx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1583,6 +1714,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2016/10/13/闭包/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://img.suibi8.com/f2016/1449214327s.jpg)" alt="闭包" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a></p>
+                            <p class="item-title"><a href="/2016/10/13/闭包/" class="title">闭包</a></p>
+                            <p class="item-date"><time datetime="2016-10-13T13:57:48.000Z" itemprop="datePublished">2016-10-13</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2016/10/13/尾递归/" class="thumbnail">
     
     
@@ -1656,25 +1806,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/10/动态规划：从新手到专家/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://uedso.com/uploads/allimg/140227/2-14022G60R3.jpg)" alt="动态规划：从新手到专家" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a></p>
-                            <p class="item-title"><a href="/2016/10/10/动态规划：从新手到专家/" class="title">动态规划：从新手到专家</a></p>
-                            <p class="item-date"><time datetime="2016-10-10T10:14:24.000Z" itemprop="datePublished">2016-10-10</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1684,7 +1815,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">8</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">9</span></li></ul>
         </div>
     </div>
 
@@ -1693,7 +1824,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1702,7 +1833,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法-最短路径算法/">算法,最短路径算法</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法-最短路径算法/">算法,最短路径算法</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1711,7 +1842,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/算法-最短路径算法/" style="font-size: 10px;">算法,最短路径算法</a>
+            <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/算法-最短路径算法/" style="font-size: 10px;">算法,最短路径算法</a>
         </div>
     </div>
 

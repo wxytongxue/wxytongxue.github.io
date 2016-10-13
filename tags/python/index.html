@@ -3,29 +3,14 @@
 <head>
     <meta charset="utf-8">
     
-    <title>尾递归 | 学而知码，写而造轮</title>
+    <title>Tag: python | 学而知码，写而造轮</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="简介尾递归与普通递归的差别在于对内存的使用量，普通递归创建堆栈，占用内存空间先增加后而收缩，尾递归对内存的使用一直保持恒定。
-
-实例12345(普通递归版)def add(n):    if n==1:    	return n    return n + add(n-1)
-运算过程(当n初始值为６)123456789101112add(6)6 + add(5)6 + (5 + add(4))6">
-<meta property="og:type" content="article">
-<meta property="og:title" content="尾递归">
-<meta property="og:url" content="http://wxy-cs.com/2016/10/13/尾递归/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="学而知码，写而造轮">
+<meta property="og:url" content="http://wxy-cs.com/tags/python/index.html">
 <meta property="og:site_name" content="学而知码，写而造轮">
-<meta property="og:description" content="简介尾递归与普通递归的差别在于对内存的使用量，普通递归创建堆栈，占用内存空间先增加后而收缩，尾递归对内存的使用一直保持恒定。
-
-实例12345(普通递归版)def add(n):    if n==1:    	return n    return n + add(n-1)
-运算过程(当n初始值为６)123456789101112add(6)6 + add(5)6 + (5 + add(4))6">
-<meta property="og:image" content="http://ww1.sinaimg.cn/bmiddle/7f449db5jw1eyppmb3m5kj20k00c0gmy.jpg">
-<meta property="og:updated_time" content="2016-10-13T12:36:11.003Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="尾递归">
-<meta name="twitter:description" content="简介尾递归与普通递归的差别在于对内存的使用量，普通递归创建堆栈，占用内存空间先增加后而收缩，尾递归对内存的使用一直保持恒定。
-
-实例12345(普通递归版)def add(n):    if n==1:    	return n    return n + add(n-1)
-运算过程(当n初始值为６)123456789101112add(6)6 + add(5)6 + (5 + add(4))6">
-<meta name="twitter:image" content="http://ww1.sinaimg.cn/bmiddle/7f449db5jw1eyppmb3m5kj20k00c0gmy.jpg">
+<meta name="twitter:title" content="学而知码，写而造轮">
     
 
     
@@ -214,218 +199,50 @@
 </aside>
 
             
-            <section id="main"><article id="post-尾递归" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
+            <section id="main">
+<div class="timeline timeline-wrap">
+    <div class="timeline-row timeline-row-major">
+        <span class="node"><i class="fa fa-tag"></i></span>
+        <h1 class="title">#python</h1>
+    </div>
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
                 
     
-        <h1 class="article-title" itemprop="name">
-            尾递归
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2016/10/13/闭包/">闭包</a>
         </h1>
     
 
-                
-                    <div class="article-meta">
-                        
+                <div class="article-meta">
+                    
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/10/13/尾递归/">
-            <time datetime="2016-10-13T11:32:54.000Z" itemprop="datePublished">2016-10-13</time>
+        <a href="/2016/10/13/闭包/">
+            <time datetime="2016-10-13T13:57:48.000Z" itemprop="datePublished">2016-10-13</time>
         </a>
     </div>
 
 
-                        
+                    
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/技术/">技术</a>
     </div>
 
-                        
+                    
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/技巧/">技巧</a>
+        <a class="tag-link" href="/tags/python/">python</a>
     </div>
 
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>尾递归与普通递归的差别在于对<strong>内存的使用量</strong>，普通递归创建堆栈，<strong>占用内存空间先增加后而收缩</strong>，尾递归对内存的使用一直<strong>保持恒定</strong>。</p>
-<hr>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(普通递归版)</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(n)</span>:</span></div><div class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</div><div class="line">    	<span class="keyword">return</span> n</div><div class="line">    <span class="keyword">return</span> n + add(n<span class="number">-1</span>)</div></pre></td></tr></table></figure>
-<p><strong>运算过程</strong><br>(当n初始值为６)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">add(<span class="number">6</span>)</div><div class="line"><span class="number">6</span> + add(<span class="number">5</span>)</div><div class="line"><span class="number">6</span> + (<span class="number">5</span> + add(<span class="number">4</span>))</div><div class="line"><span class="number">6</span> + (<span class="number">5</span> + (<span class="number">4</span> + add(<span class="number">3</span>)))</div><div class="line"><span class="number">6</span> + (<span class="number">5</span> + (<span class="number">4</span> + (<span class="number">3</span> + add(<span class="number">2</span>))))</div><div class="line"><span class="number">6</span> + (<span class="number">5</span> + (<span class="number">4</span> + (<span class="number">3</span> + (<span class="number">2</span> + add(<span class="number">1</span>)))))</div><div class="line"><span class="number">6</span> + (<span class="number">5</span> + (<span class="number">4</span> + (<span class="number">3</span> + (<span class="number">2</span> + <span class="number">1</span>))))</div><div class="line"><span class="number">6</span> + (<span class="number">5</span> + (<span class="number">4</span> + (<span class="number">3</span> + <span class="number">3</span>)))</div><div class="line"><span class="number">6</span> + (<span class="number">5</span> + (<span class="number">4</span> + <span class="number">6</span>))</div><div class="line"><span class="number">6</span> + (<span class="number">5</span> + <span class="number">10</span>)</div><div class="line"><span class="number">6</span> + <span class="number">15</span></div><div class="line"><span class="number">21</span></div></pre></td></tr></table></figure></p>
-<p><strong>使用尾递归</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(n,num=<span class="number">0</span>)</span>:</span></div><div class="line">    <span class="keyword">if</span> n==<span class="number">1</span></div><div class="line">	<span class="keyword">return</span> num</div><div class="line">   <span class="keyword">return</span>  add(n<span class="number">-1</span>,n+num)</div></pre></td></tr></table></figure></p>
-<p><strong>运算过程</strong><br>(当n的初始值为６)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">add(<span class="number">6</span>,<span class="number">0</span>)</div><div class="line">add(<span class="number">5</span>,<span class="number">6</span>)</div><div class="line">add(<span class="number">4</span>,<span class="number">11</span>)</div><div class="line">add(<span class="number">3</span>,<span class="number">15</span>)</div><div class="line">add(<span class="number">2</span>,<span class="number">18</span>)</div><div class="line">add(<span class="number">1</span>,<span class="number">20</span>)</div><div class="line"><span class="number">21</span></div></pre></td></tr></table></figure>
-<hr>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><ul>
-<li>保证返回的是一个<strong>纯函数</strong></li>
-<li>尾递归的判断标准是<strong>函数运行最后一步</strong>是否调用自身，而不是是否在函数的<strong>最后一行</strong>调用自身。</li>
-</ul>
-<hr>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p>   <a href="http://www.ruanyifeng.com/blog/2015/04/tail-call.html" target="_blank" rel="external">尾调用优化</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://wxy-cs.com/2016/10/13/尾递归/" data-id="ciu8fr1op000gff6xenjn2q4t" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://wxy-cs.com/2016/10/13/尾递归/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/13/尾递归/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2016/10/13/闭包/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    闭包
-                
+                </div>
             </div>
-        </a>
+        </div>
     
-    
-        <a href="/2016/10/13/动态规划：金矿模型/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">动态规划：金矿模型</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    <section id="comments">
-    
-        
-    <div class="ds-thread" data-thread-key="2016/10/13/尾递归/" data-title="尾递归" data-url="http://wxy-cs.com/2016/10/13/尾递归/"></div>
-    <style>
-        #ds-thread #ds-reset .ds-textarea-wrapper {
-            background: none;
-        }
-        #ds-reset .ds-avatar img {
-            box-shadow: none;
-        }
-        #ds-reset .ds-gradient-bg {
-            background: #f7f7f7;
-        }
-        #ds-thread #ds-reset li.ds-tab a {
-            border-radius: 3px;
-        }
-        #ds-thread #ds-reset .ds-post-button {
-            color: white;
-            border: none;
-            box-shadow: none;
-            background: #d32;
-            text-shadow: none;
-            font-weight: normal;
-            font-family: 'Microsoft Yahei';
-        }
-        #ds-thread #ds-reset .ds-post-button:hover {
-            color: white;
-            background: #DE594C;
-        }
-        #ds-thread #ds-reset .ds-post-button:active {
-            background: #d32;
-        }
-        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
-            color: white;
-            background: #d32;
-            box-shadow: none;
-            text-shadow: none;
-            font-weight: normal;
-        }
-    </style>
-
-    
-    </section>
-
+</div>
 </section>
             
                 <aside id="sidebar">
