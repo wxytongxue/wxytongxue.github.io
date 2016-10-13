@@ -14,7 +14,7 @@
 <meta property="og:description" content="动态规划一直不好理解，直到看到这个金矿模型。
 介绍从前有个小国，小国有个聪明的国王，有一天在这个国家发现了１０个金矿，国王非常高兴，于是决定组织人员进行挖掘，来造福人民。首先他把这些金矿按照在地图上的位置从西至东进行编号，依次为0、1、2、3、4、5、6、7、8、9，然后他命令他的手下去对每一座金矿进行勘测，以便知道挖取每一座金矿需要多少人力以及每座金矿能够挖出多少金子，然后动员国民都来挖金子。">
 <meta property="og:image" content="http://oi22.com/wp-content/uploads/2014/01/e9b6af99345fcadaddb42f3bd128b329.jpg">
-<meta property="og:updated_time" content="2016-10-13T04:56:30.745Z">
+<meta property="og:updated_time" content="2016-10-13T04:58:15.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划：金矿模型">
 <meta name="twitter:description" content="动态规划一直不好理解，直到看到这个金矿模型。
@@ -85,7 +85,7 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -104,10 +104,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Entradas',
+            POSTS: 'Posts',
             PAGES: 'Pages',
-            CATEGORIES: 'Categorias',
-            TAGS: 'Etiquetas',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -138,7 +138,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
     </div>
 
                 </td>
@@ -158,16 +158,16 @@
             <h2 id="name">WXY</h2>
             <h3 id="title">Coder &amp; Student</h3>
             <span id="location"><i class="fa fa-map-marker"></i>LiaoCheng, China</span>
-            <a id="follow" target="_blank" href="https://github.com/wxytongxue/">SEGUIR</a>
+            <a id="follow" target="_blank" href="https://github.com/wxytongxue/">FOLLOW</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
                 7
-                <span>Entradas</span>
+                <span>posts</span>
             </div>
             <div class="article-info-block">
                 3
-                <span>Etiquetas</span>
+                <span>tags</span>
             </div>
         </div>
         
@@ -368,13 +368,13 @@
 <p>8、共有x <em> y </em> z 个问题，每个问题面对7种选择，时间为：O( x <em> y </em> z <em> 7) =  O( x </em> y * z )。</p>
 <p>9、用函数MinMoney(i,j,k)来表示购买第1卷i本，第2卷j本，第3卷k本时所需的最少金钱，那么有：</p>
 <p>MinMoney(i,j,k)=min(s1,s2,s3,s4,s5,s6,s7),其中s1,s2,s3,s4,s5,s6,s7分别为对应的7种方案使用的最少金钱：</p>
-<p><em>*s1 = 60 </em> 0.95 + MinMoney(i-1,j,k)</p>
-<p><em>*s2 = 60 </em> 0.95 + MinMoney(i,j-1,k)</p>
-<p><em>*s3 = 60 </em> 0.95 + MinMoney(i,j,k-1)</p>
-<p><em>*s4 = (60 + 60) </em> 0.9 + MinMoney(i-1,j-1,k)</p>
-<p><em>*s5 = (60 + 60) </em> 0.9 + MinMoney(i-1,j,k-1)</p>
-<p><em>*s6 = (60 + 60) </em> 0.9 + MinMoney(i-1,j,k-1)</p>
-<p><em>*s7 = (60 + 60 + 60) </em> 0.85 + MinMoney(i-1,j-1,k-1)</p>
+<p><strong>s1 = 60 * 0.95 + MinMoney(i-1,j,k)</strong></p>
+<p><strong>s2 = 60 * 0.95 + MinMoney(i,j-1,k)</strong></p>
+<p><strong>s3 = 60 * 0.95 + MinMoney(i,j,k-1)</strong></p>
+<p><strong>s4 = (60 + 60) * 0.9 + MinMoney(i-1,j-1,k)</strong></p>
+<p><strong>s5 = (60 + 60) * 0.9 + MinMoney(i-1,j,k-1)</strong></p>
+<p><strong>s6 = (60 + 60) * 0.9 + MinMoney(i-1,j,k-1)</strong></p>
+<p><strong>s7 = (60 + 60 + 60) * 0.85 + MinMoney(i-1,j-1,k-1)</strong></p>
 <p>注：以上文章来自网络，原作者已不可考量，如有侵权请及时告知，２４小时内删除！</p>
 
         
@@ -386,7 +386,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/" data-id="ciu7vi3gt0007b06xk10tv1tg" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+    <a data-url="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/" data-id="ciu7vkdi6000ec66xpbvj0bbf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -454,7 +454,7 @@
 
             
     
-        <a href="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/">Comentarios</a>
+        <a href="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/">Comments</a>
     
 
         </footer>
@@ -465,7 +465,7 @@
     
     
         <a href="/2016/10/12/贪心算法/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Más viejo</strong>
+            <strong class="article-nav-caption">Older</strong>
             <div class="article-nav-title">贪心算法</div>
         </a>
     
@@ -528,7 +528,7 @@
    
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Recientes</h3>
+        <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
                 
@@ -634,7 +634,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Categorias</h3>
+        <h3 class="widget-title">categories</h3>
         <div class="widget">
             <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">7</span></li></ul>
         </div>
@@ -643,7 +643,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Archivos</h3>
+        <h3 class="widget-title">archives</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
         </div>
@@ -652,7 +652,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Etiquetas</h3>
+        <h3 class="widget-title">tags</h3>
         <div class="widget">
             <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法-最短路径算法/">算法,最短路径算法</a><span class="tag-list-count">1</span></li></ul>
         </div>
@@ -661,7 +661,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Nube de etiquetas</h3>
+        <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
             <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/算法-最短路径算法/" style="font-size: 10px;">算法,最短路径算法</a>
         </div>
@@ -670,7 +670,7 @@
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">Links</h3>
+        <h3 class="widget-title">links</h3>
         <div class="widget">
             <ul>
                 
