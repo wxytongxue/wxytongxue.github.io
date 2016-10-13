@@ -76,7 +76,7 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -95,10 +95,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
+            POSTS: 'Entradas',
             PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            CATEGORIES: 'Categorias',
+            TAGS: 'Etiquetas',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -129,7 +129,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
     </div>
 
                 </td>
@@ -149,16 +149,16 @@
             <h2 id="name">WXY</h2>
             <h3 id="title">Coder &amp; Student</h3>
             <span id="location"><i class="fa fa-map-marker"></i>LiaoCheng, China</span>
-            <a id="follow" target="_blank" href="https://github.com/wxytongxue/">FOLLOW</a>
+            <a id="follow" target="_blank" href="https://github.com/wxytongxue/">SEGUIR</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
                 7
-                <span>posts</span>
+                <span>Entradas</span>
             </div>
             <div class="article-info-block">
                 3
-                <span>tags</span>
+                <span>Etiquetas</span>
             </div>
         </div>
         
@@ -325,86 +325,50 @@
 <p>非正式地，我们可以很容易得到动态规划所需时间，如果共有questionCount个相同的子问题，而每一个问题需要面对chooseCount种选择时，我们所需时间就为questionCount <em> chooseCount个常数。在金矿模型中，子问题最多有大概people </em> n 个(其中people是用于开采金矿的总人数，n是金矿的总数)，因此questionCount = people <em> n，而就像国王需要考虑是采用左部下的结果还是采用右部下的结果一样，每个问题面对两个选择，因此chooseCount = 2,所以程序运行时间为** T = O(questionCount </em> chooseCount) =O(people <em> n)*</em>，别忘了实际上需要的时间小于这个值，根据所遇到的具体情况有所不同。</p>
 <p> 这就是动态规划的魔力，它减少了大量的计算，因此我们需要动态规划！</p>
 <p>—-第三节—-动态规划的思考角度———-</p>
-<pre><code>那么什么是动态规划呢？我个人觉得，如果一个解决问题的方法满足上面六个思考点中的前四个，那么这个方法就属于动态规划。而在思考动态规划方法时，后两点同样也是需要考虑的。
+<p>那么什么是动态规划呢？我个人觉得，如果一个解决问题的方法满足上面六个思考点中的前四个，那么这个方法就属于动态规划。而在思考动态规划方法时，后两点同样也是需要考虑的。</p>
+<p>面对问题要寻找动态规划的方法，首先要清楚一点，动态规划不是算法，它是一种方法，它是在一件事情发生的过程中寻找最优值的方法，因此，我们需要对这件事情所发生的过程进行考虑。而通常我们从过程的最后一步开始考虑，而不是先考虑过程的开始。</p>
+<p>打个比方，上面的挖金矿问题，我们可以认为整个开采过程是从西至东进行开采的（也就是从第0座开始），那么总有面对最后一座金矿的时候（第9座），对这座金矿不外乎两个选择，开采与不开采，在最后一步确定时再去确定倒数第二步，直到考虑第0座金矿（过程的开始）。</p>
+<p>而过程的开始，也就是考虑的最后一步，就是边界。</p>
+<p>因此在遇到一个问题想用动态规划的方法去解决时，不妨先思考一下这个过程是怎样的，然后考虑过程的最后一步是如何选择的，通常我们需要自己去构造一个过程，比如后面的练习。</p>
+<p>—-第四节—-总结——-</p>
+<p>那么遇到问题如何用动态规划去解决呢？根据上面的分析我们可以按照下面的步骤去考虑：</p>
+<p>1、构造问题所对应的过程。</p>
+<p>2、思考过程的最后一个步骤，看看有哪些选择情况。</p>
+<p>3、找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参数。</p>
+<p>4、使得子问题符合“最优子结构”。</p>
+<p>5、找到边界，考虑边界的各种处理方式。</p>
+<p>6、确保满足“子问题独立”，一般而言，如果我们是在多个子问题中选择一个作为实施方案，而不会同时实施多个方案，那么子问题就是独立的。</p>
+<p>7、考虑如何做备忘录。</p>
+<p>8、分析所需时间是否满足要求。</p>
+<p>9、写出转移方程式。</p>
+<p>—-第五节—-练习——-</p>
+<p>题目一：买书</p>
+<p>有一书店引进了一套书，共有3卷，每卷书定价是60元，书店为了搞促销，推出一个活动，活动如下：</p>
+<p>如果单独购买其中一卷，那么可以打9.5折。</p>
+<p>如果同时购买两卷不同的，那么可以打9折。</p>
+<p>如果同时购买三卷不同的，那么可以打8.5折。</p>
+<p>如果小明希望购买第1卷x本，第2卷y本，第3卷z本，那么至少需要多少钱呢？（x、y、z为三个已知整数）。</p>
+<p>当然，这道题完全可以不用动态规划来解，但是现在我们是要学习动态规划，因此请想想如何用动态规划来做？</p>
+<p>答案：</p>
+<p>1、过程为一次一次的购买，每一次购买也许只买一本（这有三种方案），或者买两本（这也有三种方案），或者三本一起买（这有一种方案），最后直到买完所有需要的书。</p>
+<p>2、最后一步我必然会在7种购买方案中选择一种，因此我要在7种购买方案中选择一个最佳情况。</p>
+<p>3、子问题是，我选择了某个方案后，如何使得购买剩余的书能用最少的钱？并且这个选择不会使得剩余的书为负数。母问题和子问题都是给定三卷书的购买量，求最少需要用的钱，所以有“子问题重叠”，问题中三个购买量设置为参数，分别为i、j、k。</p>
+<p>4、的确符合。</p>
+<p>5、边界是一次购买就可以买完所有的书，处理方式请读者自己考虑。</p>
+<p>6、每次选择最多有7种方案，并且不会同时实施其中多种，因此方案的选择互不影响，所以有“子问题独立”。</p>
+<p>7、我可以用minMoney[i][j][k]来保存购买第1卷i本，第2卷j本，第3卷k本时所需的最少金钱。</p>
+<p>8、共有x <em> y </em> z 个问题，每个问题面对7种选择，时间为：O( x <em> y </em> z <em> 7) =  O( x </em> y * z )。</p>
+<p>9、用函数MinMoney(i,j,k)来表示购买第1卷i本，第2卷j本，第3卷k本时所需的最少金钱，那么有：</p>
+<p>MinMoney(i,j,k)=min(s1,s2,s3,s4,s5,s6,s7),其中s1,s2,s3,s4,s5,s6,s7分别为对应的7种方案使用的最少金钱：</p>
+<p><em>*s1 = 60 </em> 0.95 + MinMoney(i-1,j,k)</p>
+<p><em>*s2 = 60 </em> 0.95 + MinMoney(i,j-1,k)</p>
+<p><em>*s3 = 60 </em> 0.95 + MinMoney(i,j,k-1)</p>
+<p><em>*s4 = (60 + 60) </em> 0.9 + MinMoney(i-1,j-1,k)</p>
+<p><em>*s5 = (60 + 60) </em> 0.9 + MinMoney(i-1,j,k-1)</p>
+<p><em>*s6 = (60 + 60) </em> 0.9 + MinMoney(i-1,j,k-1)</p>
+<p><em>*s7 = (60 + 60 + 60) </em> 0.85 + MinMoney(i-1,j-1,k-1)</p>
+<p>注：以上文章来自网络，原作者已不可考量，如有侵权请及时告知，２４小时内删除！</p>
 
-面对问题要寻找动态规划的方法，首先要清楚一点，动态规划不是算法，它是一种方法，它是在一件事情发生的过程中寻找最优值的方法，因此，我们需要对这件事情所发生的过程进行考虑。而通常我们从过程的最后一步开始考虑，而不是先考虑过程的开始。
-
-打个比方，上面的挖金矿问题，我们可以认为整个开采过程是从西至东进行开采的（也就是从第0座开始），那么总有面对最后一座金矿的时候（第9座），对这座金矿不外乎两个选择，开采与不开采，在最后一步确定时再去确定倒数第二步，直到考虑第0座金矿（过程的开始）。
-
-而过程的开始，也就是考虑的最后一步，就是边界。
-
-因此在遇到一个问题想用动态规划的方法去解决时，不妨先思考一下这个过程是怎样的，然后考虑过程的最后一步是如何选择的，通常我们需要自己去构造一个过程，比如后面的练习。
-</code></pre><p>—-第四节—-总结——-</p>
-<pre><code>那么遇到问题如何用动态规划去解决呢？根据上面的分析我们可以按照下面的步骤去考虑：
-
-1、构造问题所对应的过程。
-
-2、思考过程的最后一个步骤，看看有哪些选择情况。
-
-3、找到最后一步的子问题，确保符合“子问题重叠”，把子问题中不相同的地方设置为参数。
-
-4、使得子问题符合“最优子结构”。
-
-5、找到边界，考虑边界的各种处理方式。
-
-6、确保满足“子问题独立”，一般而言，如果我们是在多个子问题中选择一个作为实施方案，而不会同时实施多个方案，那么子问题就是独立的。
-
-7、考虑如何做备忘录。
-
-8、分析所需时间是否满足要求。
-
-9、写出转移方程式。
-</code></pre><p>—-第五节—-练习——-</p>
-<pre><code>题目一：买书
-
-有一书店引进了一套书，共有3卷，每卷书定价是60元，书店为了搞促销，推出一个活动，活动如下：
-
-如果单独购买其中一卷，那么可以打9.5折。
-
-如果同时购买两卷不同的，那么可以打9折。
-
-如果同时购买三卷不同的，那么可以打8.5折。
-
-如果小明希望购买第1卷x本，第2卷y本，第3卷z本，那么至少需要多少钱呢？（x、y、z为三个已知整数）。
-
-当然，这道题完全可以不用动态规划来解，但是现在我们是要学习动态规划，因此请想想如何用动态规划来做？
-
-答案：
-
-1、过程为一次一次的购买，每一次购买也许只买一本（这有三种方案），或者买两本（这也有三种方案），或者三本一起买（这有一种方案），最后直到买完所有需要的书。
-
-2、最后一步我必然会在7种购买方案中选择一种，因此我要在7种购买方案中选择一个最佳情况。
-
-3、子问题是，我选择了某个方案后，如何使得购买剩余的书能用最少的钱？并且这个选择不会使得剩余的书为负数。母问题和子问题都是给定三卷书的购买量，求最少需要用的钱，所以有“子问题重叠”，问题中三个购买量设置为参数，分别为i、j、k。
-
-4、的确符合。
-
-5、边界是一次购买就可以买完所有的书，处理方式请读者自己考虑。
-
-6、每次选择最多有7种方案，并且不会同时实施其中多种，因此方案的选择互不影响，所以有“子问题独立”。
-
-7、我可以用minMoney[i][j][k]来保存购买第1卷i本，第2卷j本，第3卷k本时所需的最少金钱。
-
-8、共有x * y * z 个问题，每个问题面对7种选择，时间为：O( x * y * z * 7) =  O( x * y * z )。
-
-9、用函数MinMoney(i,j,k)来表示购买第1卷i本，第2卷j本，第3卷k本时所需的最少金钱，那么有：
-
-       MinMoney(i,j,k)=min(s1,s2,s3,s4,s5,s6,s7),其中s1,s2,s3,s4,s5,s6,s7分别为对应的7种方案使用的最少金钱：
-
-       s1 = 60 * 0.95 + MinMoney(i-1,j,k)
-
-       s2 = 60 * 0.95 + MinMoney(i,j-1,k)
-
-       s3 = 60 * 0.95 + MinMoney(i,j,k-1)
-
-       s4 = (60 + 60) * 0.9 + MinMoney(i-1,j-1,k)
-
-       s5 = (60 + 60) * 0.9 + MinMoney(i-1,j,k-1)
-
-       s6 = (60 + 60) * 0.9 + MinMoney(i-1,j,k-1)
-
-       s7 = (60 + 60 + 60) * 0.85 + MinMoney(i-1,j-1,k-1)
-</code></pre>
         
         </div>
         <footer class="article-footer">
@@ -414,7 +378,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/" data-id="ciu7v6z8i000j716xz49wggoo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/" data-id="ciu7vi3gt0007b06xk10tv1tg" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -482,7 +446,7 @@
 
             
     
-        <a href="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/">Comments</a>
+        <a href="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/">Comentarios</a>
     
 
         </footer>
@@ -556,7 +520,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/12/贪心算法/" data-id="ciu7v6z90000o716xkrms4e5q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/12/贪心算法/" data-id="ciu7vi3hd000cb06xjcmig69v" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -624,7 +588,7 @@
 
             
     
-        <a href="http://wxy-cs.com/2016/10/12/贪心算法/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/12/贪心算法/">Comments</a>
+        <a href="http://wxy-cs.com/2016/10/12/贪心算法/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/12/贪心算法/">Comentarios</a>
     
 
         </footer>
@@ -704,7 +668,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/" data-id="ciu7v6z5q0005716xj2a4lpz0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/" data-id="ciu7vi3h00008b06x2znsyvbz" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -772,7 +736,7 @@
 
             
     
-        <a href="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/">Comments</a>
+        <a href="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/">Comentarios</a>
     
 
         </footer>
@@ -896,7 +860,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/" data-id="ciu7v6z8w000l716x44e37t6l" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/" data-id="ciu7vi3je000tb06xm1ygd8r3" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -964,7 +928,7 @@
 
             
     
-        <a href="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/">Comments</a>
+        <a href="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/">Comentarios</a>
     
 
         </footer>
@@ -1035,7 +999,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/" data-id="ciu7v6z5h0004716x1rtcx8fb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/" data-id="ciu7vi3gq0006b06xph82hky5" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1103,7 +1067,7 @@
 
             
     
-        <a href="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/">Comments</a>
+        <a href="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/">Comentarios</a>
     
 
         </footer>
@@ -1170,7 +1134,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/05/18/sql-server/" data-id="ciu7v6z550001716x7f6lwbre" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/05/18/sql-server/" data-id="ciu7vi3g20002b06xy444mt11" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1238,7 +1202,7 @@
 
             
     
-        <a href="http://wxy-cs.com/2016/05/18/sql-server/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/05/18/sql-server/">Comments</a>
+        <a href="http://wxy-cs.com/2016/05/18/sql-server/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/05/18/sql-server/">Comentarios</a>
     
 
         </footer>
@@ -1376,7 +1340,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/05/18/maltivalued-dependence/" data-id="ciu7v6z4w0000716xl6yiamoz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/05/18/maltivalued-dependence/" data-id="ciu7vi3fh0000b06xoswu3zr2" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1444,7 +1408,7 @@
 
             
     
-        <a href="http://wxy-cs.com/2016/05/18/maltivalued-dependence/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/05/18/maltivalued-dependence/">Comments</a>
+        <a href="http://wxy-cs.com/2016/05/18/maltivalued-dependence/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/05/18/maltivalued-dependence/">Comentarios</a>
     
 
         </footer>
@@ -1459,7 +1423,7 @@
    
         
     <div class="widget-wrap">
-        <h3 class="widget-title">recent</h3>
+        <h3 class="widget-title">Recientes</h3>
         <div class="widget">
             <ul id="recent-post" class="">
                 
@@ -1565,7 +1529,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">categories</h3>
+        <h3 class="widget-title">Categorias</h3>
         <div class="widget">
             <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">7</span></li></ul>
         </div>
@@ -1574,7 +1538,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">archives</h3>
+        <h3 class="widget-title">Archivos</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
         </div>
@@ -1583,7 +1547,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">tags</h3>
+        <h3 class="widget-title">Etiquetas</h3>
         <div class="widget">
             <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法-最短路径算法/">算法,最短路径算法</a><span class="tag-list-count">1</span></li></ul>
         </div>
@@ -1592,7 +1556,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">tag cloud</h3>
+        <h3 class="widget-title">Nube de etiquetas</h3>
         <div class="widget tagcloud">
             <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/算法-最短路径算法/" style="font-size: 10px;">算法,最短路径算法</a>
         </div>
@@ -1601,7 +1565,7 @@
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
+        <h3 class="widget-title">Links</h3>
         <div class="widget">
             <ul>
                 
