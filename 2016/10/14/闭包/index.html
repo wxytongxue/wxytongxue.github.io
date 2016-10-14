@@ -3,20 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>weixin | 学而知码，写而造轮</title>
+    <title>闭包 | 学而知码，写而造轮</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="请扫一扫，添加微信">
-<meta property="og:type" content="website">
-<meta property="og:title" content="weixin">
-<meta property="og:url" content="http://wxy-cs.com/weixin/index.html">
+    <meta name="description" content="1.python一切皆对象
+123List=[1,2,3]       　# 列表Tuple=(2,3,4)      　# 元组Dict=&amp;#123;&apos;A&apos;:1,&apos;B&apos;:2&amp;#125;　 # 字典
+1234567class Myclass:    def __init__(self,name):        self.name=name    def work():        print">
+<meta property="og:type" content="article">
+<meta property="og:title" content="闭包">
+<meta property="og:url" content="http://wxy-cs.com/2016/10/14/闭包/index.html">
 <meta property="og:site_name" content="学而知码，写而造轮">
-<meta property="og:description" content="请扫一扫，添加微信">
-<meta property="og:image" content="http://o77440kb4.bkt.clouddn.com/weixin.png">
-<meta property="og:updated_time" content="2016-10-03T10:48:24.110Z">
+<meta property="og:description" content="1.python一切皆对象
+123List=[1,2,3]       　# 列表Tuple=(2,3,4)      　# 元组Dict=&amp;#123;&apos;A&apos;:1,&apos;B&apos;:2&amp;#125;　 # 字典
+1234567class Myclass:    def __init__(self,name):        self.name=name    def work():        print">
+<meta property="og:image" content="http://img.suibi8.com/f2016/1449214327s.jpg">
+<meta property="og:updated_time" content="2016-10-14T14:18:21.161Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="weixin">
-<meta name="twitter:description" content="请扫一扫，添加微信">
-<meta name="twitter:image" content="http://o77440kb4.bkt.clouddn.com/weixin.png">
+<meta name="twitter:title" content="闭包">
+<meta name="twitter:description" content="1.python一切皆对象
+123List=[1,2,3]       　# 列表Tuple=(2,3,4)      　# 元组Dict=&amp;#123;&apos;A&apos;:1,&apos;B&apos;:2&amp;#125;　 # 字典
+1234567class Myclass:    def __init__(self,name):        self.name=name    def work():        print">
+<meta name="twitter:image" content="http://img.suibi8.com/f2016/1449214327s.jpg">
     
 
     
@@ -205,7 +211,7 @@
 </aside>
 
             
-            <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-闭包" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -213,10 +219,29 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            weixin
+            闭包
         </h1>
     
 
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/10/14/闭包/">
+            <time datetime="2016-10-14T13:42:58.000Z" itemprop="datePublished">2016-10-14</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
                 
             </header>
         
@@ -224,7 +249,16 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h3 id="请扫一扫，添加微信"><a href="#请扫一扫，添加微信" class="headerlink" title="请扫一扫，添加微信"></a>请扫一扫，添加微信</h3><p><img src="http://o77440kb4.bkt.clouddn.com/weixin.png" alt="weixin"></p>
+            <p><strong>1.python一切皆对象</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">List=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]       　<span class="comment"># 列表</span></div><div class="line">Tuple=(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)      　<span class="comment"># 元组</span></div><div class="line">Dict=&#123;<span class="string">'A'</span>:<span class="number">1</span>,<span class="string">'B'</span>:<span class="number">2</span>&#125;　 <span class="comment"># 字典</span></div></pre></td></tr></table></figure>
+<p><img src="" alt="1"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name)</span>:</span></div><div class="line">        self.name=name</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">work</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">print</span> name</div><div class="line">        </div><div class="line">me=Myclass(<span class="string">'xx'</span>)</div></pre></td></tr></table></figure></p>
+<p><img src="" alt="2"></p>
+<p><strong>2.函数是第一类对象</strong><br>第一类对象是指，该对象<strong>可以赋值给其它标识符，可以作为函数的参数，可以作为返回值返回</strong>。　</p>
+<ul>
+<li>函数赋值给其它标识符<br>　(函数名是函数对象的引用)<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a,b)</span>:</span></div><div class="line">    <span class="keyword">return</span> a+b</div><div class="line">add=func</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="" alt="3"></p>
 
         
         </div>
@@ -235,7 +269,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/weixin/index.html" data-id="ciu9vdmdd0012vd6x4amr70xn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/14/闭包/" data-id="ciu9vdmb4000cvd6xofcyogxz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -303,13 +337,23 @@
 
             
     
-        <a href="http://wxy-cs.com/weixin/index.html#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/weixin/index.html">Comments</a>
+        <a href="http://wxy-cs.com/2016/10/14/闭包/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/14/闭包/">Comments</a>
     
 
         </footer>
     </div>
     
         
+<nav id="article-nav">
+    
+    
+        <a href="/2016/10/13/尾递归/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">尾递归</div>
+        </a>
+    
+</nav>
+
 
     
 </article>
@@ -319,7 +363,7 @@
     <section id="comments">
     
         
-    <div class="ds-thread" data-thread-key="weixin/index.html" data-title="weixin" data-url="http://wxy-cs.com/weixin/index.html"></div>
+    <div class="ds-thread" data-thread-key="2016/10/14/闭包/" data-title="闭包" data-url="http://wxy-cs.com/2016/10/14/闭包/"></div>
     <style>
         #ds-thread #ds-reset .ds-textarea-wrapper {
             background: none;
