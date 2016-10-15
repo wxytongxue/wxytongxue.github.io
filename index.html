@@ -248,7 +248,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/14/装饰器/" data-id="ciuasefpf000yms6xshkire7y" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/14/装饰器/" data-id="ciuatae500006xg6xae1zyqxi" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -364,21 +364,20 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p><strong>1.python一切皆对象</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">List=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]       　<span class="comment"># 列表</span></div><div class="line">Tuple=(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)      　<span class="comment"># 元组</span></div><div class="line">Dict=&#123;<span class="string">'A'</span>:<span class="number">1</span>,<span class="string">'B'</span>:<span class="number">2</span>&#125;　 <span class="comment"># 字典</span></div></pre></td></tr></table></figure>
-<p><img src="" alt="1"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name)</span>:</span></div><div class="line">        self.name=name</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">work</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">print</span> name</div><div class="line">        </div><div class="line">me=Myclass(<span class="string">'xx'</span>)</div></pre></td></tr></table></figure></p>
-<p><img src="" alt="2"></p>
+            <p><strong>1.python一切皆对象</strong><br>在python里所有的变量都是对象的引用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">List=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]       　<span class="comment"># 列表</span></div><div class="line">Tuple=(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)      　<span class="comment"># 元组</span></div><div class="line">Dict=&#123;<span class="string">'A'</span>:<span class="number">1</span>,<span class="string">'B'</span>:<span class="number">2</span>&#125;　 <span class="comment"># 字典</span></div></pre></td></tr></table></figure></p>
+<p><img src="http://o77440kb4.bkt.clouddn.com/1.png" alt="1"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name)</span>:</span></div><div class="line">        self.name=name</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">work</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">print</span> name</div><div class="line">        </div><div class="line">me=Myclass(<span class="string">'xx'</span>)</div></pre></td></tr></table></figure></p>
+<p><img src="http://o77440kb4.bkt.clouddn.com/2.png" alt="2"></p>
 <p><strong>2.函数是第一类对象</strong><br>第一类对象是指，该对象<strong>可以赋值给其它标识符，可以作为函数的参数，可以作为返回值返回</strong>。　</p>
 <ul>
 <li>函数赋值给其它标识符<br>　(函数名是函数对象的引用)<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a,b)</span>:</span></div><div class="line">    <span class="keyword">return</span> a+b</div><div class="line">add=func</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="" alt="3"></p>
+<p><img src="http://o77440kb4.bkt.clouddn.com/3.png" alt="3"></p>
 <ul>
 <li>作为函数参数<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(f)</span>:</span></div><div class="line">    <span class="keyword">return</span> f()</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="number">1</span>+<span class="number">1</span></div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="" alt="4"></p>
+<p><img src="http://o77440kb4.bkt.clouddn.com/4.png" alt="4"></p>
 <ul>
 <li>作为返回值<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a,b)</span>:</span></div><div class="line">    <span class="keyword">return</span> a*b</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(f)</span>:</span></div><div class="line">    <span class="keyword">return</span> f(<span class="number">1</span>,<span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="keyword">print</span> func(f)</div></pre></td></tr></table></figure>
 </li>
@@ -402,7 +401,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/14/闭包/" data-id="ciuasefnn000hms6xebu6ba96" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/14/闭包/" data-id="ciuatae5g000cxg6xkn67vhb2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -547,7 +546,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/13/尾递归/" data-id="ciuasefne000ems6x86txiyhn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/13/尾递归/" data-id="ciuatae5r000gxg6xppk4i7yz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -803,7 +802,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/" data-id="ciuasefn10009ms6xcfly8vss" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/" data-id="ciuatae4t0005xg6xb9dgj733" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -953,7 +952,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/12/贪心算法/" data-id="ciuasefpi0010ms6xavfbh4ck" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/12/贪心算法/" data-id="ciuatae60000mxg6xxc8jozzd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1101,7 +1100,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/" data-id="ciuasefmn0007ms6xp029onhd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/" data-id="ciuatae5a000axg6xpzuvqcr8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1293,7 +1292,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/" data-id="ciuasefpd000xms6xcdkhwbay" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/" data-id="ciuatae5x000jxg6xzcsq75dn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1432,7 +1431,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/" data-id="ciuaseflz0003ms6xfc7gblnf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/" data-id="ciuatae3y0000xg6xxcdlp34j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1567,7 +1566,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/05/18/sql-server/" data-id="ciuasefn5000ams6xztxrlv10" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/05/18/sql-server/" data-id="ciuatae4k0004xg6xp97nqz4l" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1773,7 +1772,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/05/18/maltivalued-dependence/" data-id="ciuaseflq0001ms6x5aqrmh9q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/05/18/maltivalued-dependence/" data-id="ciuatae490001xg6xixkb2abm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
