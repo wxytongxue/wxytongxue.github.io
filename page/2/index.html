@@ -153,7 +153,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                12
+                13
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -200,6 +200,145 @@
 
             
             <section id="main">
+    <article id="post-Dijkstra-迪杰斯特拉-算法" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/10/10/Dijkstra-迪杰斯特拉-算法/">Dijkstra(迪杰斯特拉)算法</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/10/10/Dijkstra-迪杰斯特拉-算法/">
+            <time datetime="2016-10-10T07:31:18.000Z" itemprop="datePublished">2016-10-10</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/技术/">技术</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/算法-最短路径算法/">算法,最短路径算法</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>  迪杰斯特拉(Dijkstra)算法是典型最短路径算法，用于计算<strong><em>一个节点</em></strong>到其它节点的最短路径。<br>  迪杰斯特拉(Dijkstra)算法以起点为中心层层向外扩展（广度优先搜索思想）,直到扩展到终点为止。 </p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>   首先，引进一个辅助向量D，它的每个分量D表示当前所找到的从始点v到每个终点vi的最短路径的长度。如D[3]=2表示从始点v到终点3的路径相对最小长度为2。这里强调相对就是说在算法过程中D的值是在不断逼近最终结果但在过程中<strong>不一定就等于最短路径长度</strong>。它的初始状态为：若从v到vi有弧，则D为弧上的权值；否则置D为∞。显然，长度为 <strong>D[j]=Min{D | vi∈V}</strong> 的路径就是从v出发的长度最短的一条最短路径。此路径为(v,vj)。 那么，下一条长度次短的最短路径是哪一条呢？假设该次短路径的终点是vk，则可想而知，<strong>这条路径或者是(v,vk)，或者是(v,vj,vk)</strong>。它的长度或者是从v到vk的弧上的权值，或者是D[j]和从vj到vk的弧上的权值之和。 一般情况下，假设S为已求得最短路径的终点的集合，则可证明：<strong>下一条最短路径（设其终点为X）或者是弧(v,x)，或者是中间只经过S中的顶点而最后到达顶点X的路径</strong>。因此，下一条长度次短的最短路径的长度必是D[j]=Min{D | vi∈V-S} 其中，D或者是弧(v,vi)上的权值，或者是D<a href="vk∈S">k</a>和弧(vk,vi)上的权值之和。 </p>
+<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p>  通过Dijkstra计算图G中的最短路径时，需要<strong>指定起点s</strong>(即从顶点s开始计算)。</p>
+<p>  此外，引进两个集合S和U。<strong>S的作用是记录已求出最短路径的顶点(以及相应的最短路径长度)，而U则是记录还未求出最短路径的顶点(以及该顶点到起点s的距离)。</strong></p>
+<p>  初始时，S中只有起点s；U中是除s之外的顶点，并且U中顶点的路径是”起点s到该顶点的路径”。然后，从U中找出路径最短的顶点，并将其加入到S中；接着，更新U中的顶点和顶点对应的路径。 然后，再从U中找出路径最短的顶点，并将其加入到S中；接着，更新U中的顶点和顶点对应的路径。 … 重复该操作，直到遍历完所有顶点。</p>
+<h2 id="图解"><a href="#图解" class="headerlink" title="图解"></a>图解</h2><p><img src="http://o77440kb4.bkt.clouddn.com/01.jpg" alt="1"><br><img src="http://o77440kb4.bkt.clouddn.com/02.jpg" alt="2"></p>
+<h3 id="动态图解"><a href="#动态图解" class="headerlink" title="动态图解"></a>动态图解</h3><p><img src="http://o77440kb4.bkt.clouddn.com/2012073019540660.gif" alt="3"></p>
+<p>注：以上图片均来自网络，如有侵权，24小时内删除！</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/" data-id="ciue5b9l40000fo6xcki9dgws" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-sql-server" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -257,7 +396,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/05/18/sql-server/" data-id="ciucqv47v00060i6xd0pfn5ga" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/05/18/sql-server/" data-id="ciue5b9m00008fo6xd1m07gwq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -463,7 +602,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/05/18/maltivalued-dependence/" data-id="ciucqv47c00020i6xct4udrqy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/05/18/maltivalued-dependence/" data-id="ciue5b9lu0006fo6xjb3pah8o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -557,6 +696,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2016/10/17/git-版本控制/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/10/17/git-版本控制/" class="title">git 版本控制</a></p>
+                            <p class="item-date"><time datetime="2016-10-17T14:17:46.000Z" itemprop="datePublished">2016-10-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2016/10/16/软件工程-整体开发过程记录/" class="thumbnail">
     
     
@@ -630,25 +788,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/13/尾递归/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://ww1.sinaimg.cn/bmiddle/7f449db5jw1eyppmb3m5kj20k00c0gmy.jpg)" alt="尾递归" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a></p>
-                            <p class="item-title"><a href="/2016/10/13/尾递归/" class="title">尾递归</a></p>
-                            <p class="item-date"><time datetime="2016-10-13T11:32:54.000Z" itemprop="datePublished">2016-10-13</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -667,7 +806,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
