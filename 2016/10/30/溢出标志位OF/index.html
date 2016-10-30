@@ -5,13 +5,27 @@
     
     <title>溢出标志位OF | 学而知码，写而造轮</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="article">
+    <meta name="description" content="溢出的原意是在一个容器里，水满了会溢出来。而在计算机里指的是运算的数据超过CPU的字长所能表示的范围，寄存器无法表示这个数据。在计算机中溢出分为两种：
+
+可修正溢出
+不可修正溢出可修正溢出指的其实就是CF标志位。不可修正溢出指的其实是OF标志位。进位标志位CF表示的是无符号数进行运算是否超出运算范围，超出范围后再加上进位或借位标志位后结果仍然正确（即可修正）。而溢出标志位指的是有符号数之间进行运算">
+<meta property="og:type" content="article">
 <meta property="og:title" content="溢出标志位OF">
 <meta property="og:url" content="http://wxy-cs.com/2016/10/30/溢出标志位OF/index.html">
 <meta property="og:site_name" content="学而知码，写而造轮">
-<meta property="og:updated_time" content="2016-10-30T01:45:41.261Z">
+<meta property="og:description" content="溢出的原意是在一个容器里，水满了会溢出来。而在计算机里指的是运算的数据超过CPU的字长所能表示的范围，寄存器无法表示这个数据。在计算机中溢出分为两种：
+
+可修正溢出
+不可修正溢出可修正溢出指的其实就是CF标志位。不可修正溢出指的其实是OF标志位。进位标志位CF表示的是无符号数进行运算是否超出运算范围，超出范围后再加上进位或借位标志位后结果仍然正确（即可修正）。而溢出标志位指的是有符号数之间进行运算">
+<meta property="og:image" content="http://img14.3lian.com/201603/22/bd3a5faab4de8a0516008fcd4dab4dfa.jpg">
+<meta property="og:updated_time" content="2016-10-30T03:15:47.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="溢出标志位OF">
+<meta name="twitter:description" content="溢出的原意是在一个容器里，水满了会溢出来。而在计算机里指的是运算的数据超过CPU的字长所能表示的范围，寄存器无法表示这个数据。在计算机中溢出分为两种：
+
+可修正溢出
+不可修正溢出可修正溢出指的其实就是CF标志位。不可修正溢出指的其实是OF标志位。进位标志位CF表示的是无符号数进行运算是否超出运算范围，超出范围后再加上进位或借位标志位后结果仍然正确（即可修正）。而溢出标志位指的是有符号数之间进行运算">
+<meta name="twitter:image" content="http://img14.3lian.com/201603/22/bd3a5faab4de8a0516008fcd4dab4dfa.jpg">
     
 
     
@@ -158,7 +172,7 @@
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                7
+                8
                 <span>tags</span>
             </div>
         </div>
@@ -225,6 +239,11 @@
 
                         
                         
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/汇编/">汇编</a>
+    </div>
+
                     </div>
                 
             </header>
@@ -233,7 +252,19 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            
+            <p><strong>溢出</strong>的原意是在一个容器里，水满了会溢出来。而在计算机里指的是运算的数据超过CPU的字长所能表示的范围，寄存器无法表示这个数据。<br>在计算机中溢出分为两种：</p>
+<ul>
+<li>可修正溢出</li>
+<li>不可修正溢出<br>可修正溢出指的其实就是<strong>CF</strong>标志位。<br>不可修正溢出指的其实是<strong>OF</strong>标志位。<br><strong>进位标志位CF表示的是无符号数进行运算是否超出运算范围，超出范围后再加上进位或借位标志位后结果仍然正确（即可修正）。而溢出标志位指的是有符号数之间进行运算是否超出范围，超出范围运算结果不正确（即不可修正）。</strong><br>从用户角度，参与运算的数据可以是<strong>有符号数</strong>或<strong>无符号数</strong>,而计算机无法进行判断是有符号数还是无符号数，所以计算机进行计算时，先按照无符号数运算置位<strong>CF</strong>，再按有符号数运算置位<strong>OF</strong>。<br>在计算机中是通过<strong>异或门</strong>来进行置位OF标志位;<strong>最高位的进位与次高位的进位进行异或</strong>,也就是说如果最高位符号位产生进位，而次高位数值位没有产生进位，或最高位符号位没有产生进位，次高位数值位产生进位的话即发生溢出，要置位OF溢出标志位。<br><strong>eg:</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">  <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></div><div class="line">+ <span class="number">0</span> <span class="number">1</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </div><div class="line">--------------------</div><div class="line">  <span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>CF=0 OF=1</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">  <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></div><div class="line">+ <span class="number">1</span> <span class="number">1</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> </div><div class="line">--------------------</div><div class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span></div></pre></td></tr></table></figure>
+<p><strong>CF=0 OF=1</strong><br><strong>结论</strong>:两个正数相加的结果位负数，或两个负数相加的结果为正数即发生了溢出。</p>
+<p>溢出的根本原因是数据有符号后，表示范围发生了改变，像8位的无符号数的表示范围是0~255，而8位有符号数的表示范围变为-128~127，也就是说有一个数大于127或小于-128就发生了溢出。</p>
+<p><strong>应用</strong><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">setg   D      ~(SF^OF)&amp;~ZF→D     大于（有符号数）</div><div class="line">setge  D      ~(SF^OF)→D         大于等于(有符号数)           </div><div class="line">setl   D       (SF^OF)→D         小于(有符号数)</div><div class="line">setle  D       (SF^OF)|ZF→D      小于等于(有符号数)</div></pre></td></tr></table></figure></p>
+<p>正数(大)-正数(小)=正数  SF=0 OF=0  ~(SF^OF)=1 ZF=0 ~(SF^OF)&amp;~ZF=1<br>正数(小)-正数(大)=负数  SF=1 OF=0  (SF^OF)=1<br>正数(大)-负数(小)=正数  SF=0 OF=0 或 SF=1 OF=1 ~(SF^OF)=1 ZF=0 ~(SF^OF)&amp;ZF=1<br>正数(小)-负数(大)=正数  SF=0 OF=<br>负数(大)-正数(小)=正数  SF=1 OF=<br>负数(小)-正数(大)=正数  SF=0 OF=</p>
+
         
         </div>
         <footer class="article-footer">
@@ -243,7 +274,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/30/溢出标志位OF/" data-id="ciuvz6nlp000f1w6xh2oyl9gb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/30/溢出标志位OF/" data-id="ciuw0jkk1000c9o6xrjr28i91" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -395,7 +426,7 @@
                             <a href="/2016/10/30/溢出标志位OF/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://img14.3lian.com/201603/22/bd3a5faab4de8a0516008fcd4dab4dfa.jpg)" alt="溢出标志位OF" class="thumbnail-image"></span>
     
 </a>
 
@@ -511,7 +542,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法-最短路径算法/">算法,最短路径算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法-最短路径算法/">算法,最短路径算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -520,7 +551,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/算法-最短路径算法/" style="font-size: 10px;">算法,最短路径算法</a> <a href="/tags/软件工程/" style="font-size: 10px;">软件工程</a>
+            <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/算法-最短路径算法/" style="font-size: 10px;">算法,最短路径算法</a> <a href="/tags/软件工程/" style="font-size: 10px;">软件工程</a>
         </div>
     </div>
 
