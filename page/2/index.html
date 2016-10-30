@@ -153,7 +153,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                14
+                15
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -200,6 +200,154 @@
 
             
             <section id="main">
+    <article id="post-动态规划-01背包问题" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/10/11/动态规划-01背包问题/">动态规划-01背包问题</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/10/11/动态规划-01背包问题/">
+            <time datetime="2016-10-11T06:30:56.000Z" itemprop="datePublished">2016-10-11</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/技术/">技术</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/算法/">算法</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>01背包问题是<strong>动态规划</strong>里的经典问题。<br>动态规划的核心是找到<strong>状态</strong>和<strong>状态转移方程</strong>。</p>
+<ul>
+<li>01背包问题的状态是 <strong>f[i,j]</strong> ：在前i件物品中选取若干件物品放在容量为j的背包里，可以获得的最大价值. </li>
+<li>01背包问题的状态转移方程为 <strong>f[i,j]=max{f[i-1,j-wi]+pi,f[i-1,j]}(j&gt;=wi)</strong></li>
+</ul>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>有编号分别为a,b,c,d,e的五件物品，它们的重量分别是2,2,6,5,4，它们的价值分别是6,3,5,4,6，现在给你个承重为10的背包，如何让背包里装入的物品具有最大的价值总和？<br><img src="http://o77440kb4.bkt.clouddn.com/2016-10-11%2014-58-11%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt=""><br>注:<strong>e2代表只有物品e时，背包容量为2时，所能获得的最大价值，b2代表只有b c d e物品时，背包容量为2，所能获得的最大价值。</strong></p>
+<h3 id="a8-15是如何来的？"><a href="#a8-15是如何来的？" class="headerlink" title="a8=15是如何来的？"></a>a8=15是如何来的？</h3><p>按照状态转换方程f[i,j]=max{f[i-1,j-wi]+pi,f[i-1,j]}得：<br>f[i-1,j-wi]为单元格b6：<strong>只有b c d e几件物品，背包容量为6时，所能获取的最大价值</strong><br>f[i-1,j]为单元格b8：<strong>只有b c d e物品，背包容量为8时，所能获得的最大价值</strong><br>由表格得：<strong>f[i-1,j-wi]+wi=9+6=15  f[i-1,j]=9  所以a8=15</strong></p>
+<p><strong>对于动态规划问题相关知识点:</strong></p>
+<blockquote>
+<p>重叠子问题</p>
+</blockquote>
+<p>例如Fibonacci数列，如果计算第100项，依旧需要计算第99项和第98项时，这就称作<strong>重叠子问题</strong></p>
+<blockquote>
+<p>无后效性、最优子结构</p>
+</blockquote>
+<p>如果状态转移方程的等式右边不会用到下标大于左边的i或k时，这就是<strong>无后效性</strong>(某阶段的状态一旦确定，此后过程演变不再受之前的各种状态和决策影响，即：<strong>“未来与过去无关”</strong>当前的状态是此前历史的一个完整总结，<strong>此前的历史只能通过当前的状态去影响过程未来的演变</strong>),符合这种定义的状态定义就称为<strong>最优子结构</strong></p>
+<p>注：以上图片、文字均有部分参考自网络，如有侵权请及时告知，将在24小时内删除！</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/" data-id="ciuwj1mhg0005sj6xr7e7dp83" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-动态规划：从新手到专家" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -314,7 +462,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/" data-id="ciuw0jkkt000g9o6xtv9byo4v" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/" data-id="ciuwj1mic000msj6x66dpsg42" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -453,7 +601,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/" data-id="ciuw0jkhz00009o6xyhsxz161" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/" data-id="ciuwj1mgu0000sj6xx7kbuavu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -588,7 +736,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/05/18/sql-server/" data-id="ciuw0jkig00049o6xs9kthwxq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/05/18/sql-server/" data-id="ciuwj1mh90004sj6x4gfqybqt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -794,7 +942,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/05/18/maltivalued-dependence/" data-id="ciuw0jki700019o6xic0u9gzp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/05/18/maltivalued-dependence/" data-id="ciuwj1mh10001sj6xh4q2zxjv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -888,6 +1036,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2016/10/30/文件系统/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/10/30/文件系统/" class="title">文件系统</a></p>
+                            <p class="item-date"><time datetime="2016-10-30T11:02:03.000Z" itemprop="datePublished">2016-10-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2016/10/30/溢出标志位OF/" class="thumbnail">
     
     
@@ -961,25 +1128,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/10/14/装饰器/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://img3.imgtn.bdimg.com/it/u=4116709815,225978394&amp;fm=21&amp;gp=0.jpg)" alt="装饰器" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2016/10/14/装饰器/" class="title">装饰器</a></p>
-                            <p class="item-date"><time datetime="2016-10-14T14:29:30.000Z" itemprop="datePublished">2016-10-14</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -998,7 +1146,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
