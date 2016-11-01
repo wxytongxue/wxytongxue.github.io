@@ -5,13 +5,18 @@
     
     <title>可重入函数 | 学而知码，写而造轮</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="article">
+    <meta name="description" content="In computing, a computer program or subroutine is called reentrant if it can be interrupted in the middle of its execution, and then be safely called again (“re-entered”) before its previous invocatio">
+<meta property="og:type" content="article">
 <meta property="og:title" content="可重入函数">
 <meta property="og:url" content="http://wxy-cs.com/2016/11/01/可重入函数/index.html">
 <meta property="og:site_name" content="学而知码，写而造轮">
-<meta property="og:updated_time" content="2016-11-01T07:09:23.961Z">
+<meta property="og:description" content="In computing, a computer program or subroutine is called reentrant if it can be interrupted in the middle of its execution, and then be safely called again (“re-entered”) before its previous invocatio">
+<meta property="og:image" content="http://img1.imgtn.bdimg.com/it/u=2722568138,1212742385&fm=21&gp=0.jpg">
+<meta property="og:updated_time" content="2016-11-01T13:38:34.350Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="可重入函数">
+<meta name="twitter:description" content="In computing, a computer program or subroutine is called reentrant if it can be interrupted in the middle of its execution, and then be safely called again (“re-entered”) before its previous invocatio">
+<meta name="twitter:image" content="http://img1.imgtn.bdimg.com/it/u=2722568138,1212742385&fm=21&gp=0.jpg">
     
 
     
@@ -158,7 +163,7 @@
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                8
+                9
                 <span>tags</span>
             </div>
         </div>
@@ -224,7 +229,17 @@
 
 
                         
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/技术/">技术</a>
+    </div>
+
                         
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/操作系统/">操作系统</a>
+    </div>
+
                     </div>
                 
             </header>
@@ -233,7 +248,13 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            
+            <p>In computing, a computer program or subroutine is called reentrant if it can be interrupted in the middle of its execution, and then be safely called again (“re-entered”) before its previous invocations complete execution. The interruption could be caused by an internal action such as a jump or call, or by an external action such as a hardware interrupt or signal. Once the reentered invocation completes, the previous invocations will resume correct execution.</p>
+<p>This definition originates from single-threaded programming environments where the flow of control could be interrupted by a hardware interrupt and transferred to an interrupt service routine (ISR). Any subroutine used by the ISR that could potentially have been executing when the interrupt was triggered should be reentrant. Often, subroutines accessible via the operating system kernel are not reentrant. Hence, interrupt service routines are limited in the actions they can perform; for instance, they are usually restricted from accessing the file system and sometimes even from allocating memory.</p>
+<p>A subroutine that is directly or indirectly recursive should be reentrant. This policy is partially enforced by structured programming languages.[citation needed] However a subroutine can fail to be reentrant if it relies on a global variable to remain unchanged but that variable is modified when the subroutine is recursively invoked.</p>
+<p>This definition of reentrancy differs from that of thread-safety in multi-threaded environments. A reentrant subroutine can achieve thread-safety,[1] but being reentrant alone might not be sufficient to be thread-safe in all situations. Conversely, thread-safe code does not necessarily have to be reentrant (see below for examples).</p>
+<p>Other terms used for reentrant programs include “pure procedure” or “sharable code”</p>
+<p>以上是来自维基百科的介绍。<br><strong>大意是：</strong><br>在计算机里，程序或子程序在执行期间可被中断，然后在以前调用执行完成的情况下可再次被安全的调用叫做<strong>可重入</strong>，中断可以是内部事件引起的如跳转或调用,或外部事件如硬件中断或信号引起的。一旦再次调用完成，以前的调用依旧能正确的执行。<br>这种定义来源于单线程编程环境中控制流可以被硬件中断给中断然后转移去中断服务子程序。</p>
+
         
         </div>
         <footer class="article-footer">
@@ -243,7 +264,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/01/可重入函数/" data-id="ciuz5swdy000nl36xvzspll9z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/01/可重入函数/" data-id="ciuzmqe91000j7w6xxtaz8j2f" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -395,14 +416,14 @@
                             <a href="/2016/11/01/可重入函数/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(http://img1.imgtn.bdimg.com/it/u=2722568138,1212742385&amp;fm=21&amp;gp=0.jpg)" alt="可重入函数" class="thumbnail-image"></span>
     
 </a>
 
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a></p>
                             <p class="item-title"><a href="/2016/11/01/可重入函数/" class="title">可重入函数</a></p>
                             <p class="item-date"><time datetime="2016-11-01T07:09:23.000Z" itemprop="datePublished">2016-11-01</time></p>
                         </div>
@@ -493,7 +514,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">9</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">10</span></li></ul>
         </div>
     </div>
 
@@ -511,7 +532,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法-最短路径算法/">算法,最短路径算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法-最短路径算法/">算法,最短路径算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -520,7 +541,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/算法-最短路径算法/" style="font-size: 10px;">算法,最短路径算法</a> <a href="/tags/软件工程/" style="font-size: 10px;">软件工程</a>
+            <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 15px;">数据库</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/算法-最短路径算法/" style="font-size: 10px;">算法,最短路径算法</a> <a href="/tags/软件工程/" style="font-size: 10px;">软件工程</a>
         </div>
     </div>
 
