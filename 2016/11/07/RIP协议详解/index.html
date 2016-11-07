@@ -26,7 +26,7 @@
 配置命令:
 1234一、Router(config)# ip route destination_network_# [subnet_mask] IP_address_of">
 <meta property="og:image" content="http://i01.pictn.sogoucdn.com/58eac2e2cd3f330d">
-<meta property="og:updated_time" content="2016-11-07T07:12:34.334Z">
+<meta property="og:updated_time" content="2016-11-07T07:16:14.727Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RIP协议详解">
 <meta name="twitter:description" content="路由选择算法路由选择算法是计算机网络的核心部分，分为两类：
@@ -282,22 +282,23 @@
 <li>由于互联网越来越大，路由器里的路由表也随之变大，早期路由表里存放着到达<strong>每一个网络</strong>的下一跳地址，但是路由表依旧很大，同时许多单位不愿意对外公开自己内部的网络拓扑结构，于是人们又对互联网再次进行了划分，将互联网划分成一个一个的<strong>自治系统</strong>，一个自治系统其实就是一个<strong>小的互联网</strong>，自治系统也可以说是<strong>单一的技术管理下的一组路由器</strong>,每一个自治系统由几个网络组成。</li>
 <li>在现在的互联网上一个大的<strong>ISP</strong>就是一个自治系统。</li>
 <li>一个自治系统内部需要确定一种路由选择协议（IGP），以确定分组在自治系统内部的路由，同时也需要一个外部的路由协议（EGP），以确定分组在AS之间的路由。</li>
-<li>自治系统之间的路由选择又称为:<strong>域间路由选择</strong>，而自治系统内部的路由选择又称为:<strong>域内路由选择</strong>。<br><strong>IGP和EGP是一种协议类型，不是一种协议</strong><br>###IGP(Interior Gateway Protocol)内部网关协议</li>
+<li>自治系统之间的路由选择又称为:<strong>域间路由选择</strong>，而自治系统内部的路由选择又称为:<strong>域内路由选择</strong>。<br><strong>IGP和EGP是一种协议类型，不是一种协议</strong><h3 id="IGP-Interior-Gateway-Protocol-内部网关协议"><a href="#IGP-Interior-Gateway-Protocol-内部网关协议" class="headerlink" title="IGP(Interior Gateway Protocol)内部网关协议"></a>IGP(Interior Gateway Protocol)内部网关协议</h3></li>
 <li>面对的是一个个网络的路由器<br><strong>典型协议:</strong></li>
 <li>RIP(Routing Infaction Protocol) 路由信息协议</li>
-<li>OSPF(Open Shortest Path First)开放式最短路径优先协议<br>###EGP(Exterior Gateway Protocol)外部网关协议</li>
+<li>OSPF(Open Shortest Path First)开放式最短路径优先协议<h3 id="EGP-Exterior-Gateway-Protocol-外部网关协议"><a href="#EGP-Exterior-Gateway-Protocol-外部网关协议" class="headerlink" title="EGP(Exterior Gateway Protocol)外部网关协议"></a>EGP(Exterior Gateway Protocol)外部网关协议</h3></li>
 <li>面对的是一个个的小互联网的<strong>边界路由</strong><br><strong>典型协议:</strong></li>
 <li>BGP(Border Gateway Protocol) 边界网关协议</li>
 </ul>
-<p>###RIP</p>
-<ul>
+<h3 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h3><ul>
 <li>原理：基于<strong>距离向量</strong>的内部网关协议。<strong>通过本地广播定期的(系统默认是30s)向相邻的路由器交换路由信息，通过距离向量来选择一条最优的线路(通过“跳数”来计算距离，初始相邻的网络跳数为1，每跨过一个路由器，跳数自动加一，但最多跨15个路由器，当跳数为16时就代表网络不可达(以后的直接相连的网络跳数不加一))</strong>。</li>
 </ul>
-<p>###距离向量算法</p>
-<ul>
+<h3 id="距离向量算法"><a href="#距离向量算法" class="headerlink" title="距离向量算法"></a>距离向量算法</h3><ul>
 <li>对于来自相邻路由X的路由信息，先将下一条地址改为X，然后将跳数加一。 路由表里每一行都有三个项目:<strong>到达的网络N,距离是d，下一条路由器是X</strong>。</li>
-<li>if(路由表里没有到达这网络的路由信息)<br> 添加<br>else<br> if(到达该网络的下一条路由器为X)<br>   替换<br> else<br>   比较两条路由信息，保留距离较短的那条路由信息。</li>
-<li>若在三分钟内还没有收到相邻路由的更新路由信息，就将该路由标记为不可到达，即将距离改为<strong>16</strong>。</li>
+<li><p>步骤：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(路由表里没有到达这网络的路由信息)</div><div class="line">	添加</div><div class="line">   <span class="keyword">else</span></div><div class="line">	<span class="keyword">if</span>(到达该网络的下一条路由器为X)</div><div class="line">	  替换</div><div class="line">	<span class="keyword">else</span></div><div class="line">	  比较两条路由信息，保留距离较短的那条路由信息。</div></pre></td></tr></table></figure>
+</li>
+<li><p>若在三分钟内还没有收到相邻路由的更新路由信息，就将该路由标记为不可到达，即将距离改为<strong>16</strong>。</p>
+</li>
 </ul>
 
         
@@ -309,7 +310,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/07/RIP协议详解/" data-id="civ7oucmn0022e96x3tft9fh5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/07/RIP协议详解/" data-id="civ7qi0ct0002486xhrsr296b" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
