@@ -243,15 +243,36 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>##路由选择算法<br><strong>路由选择算法</strong>是计算机网络的核心部分，分为两类：</p>
+            <h2 id="路由选择算法"><a href="#路由选择算法" class="headerlink" title="路由选择算法"></a>路由选择算法</h2><p><strong>路由选择算法</strong>是计算机网络的核心部分，分为两类：</p>
 <ul>
 <li>静态路由选择策略</li>
 <li>动态路由选择策略</li>
 </ul>
-<p>###静态路由选择策略<br>静态略有选择策略是人工进行配置<strong>路由表</strong>,特点是：<strong>不具有自适应性，不能及时适应网络状态的变化，但是简单，开销较小</strong>。</p>
+<h3 id="静态路由选择策略"><a href="#静态路由选择策略" class="headerlink" title="静态路由选择策略"></a>静态路由选择策略</h3><p>静态略有选择策略是人工进行配置<strong>路由表</strong>,特点是：<strong>不具有自适应性，不能及时适应网络状态的变化，但是简单，开销较小</strong>。</p>
 <p><strong>配置命令:</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">一、</div><div class="line">Router(config)<span class="meta"># ip route destination_network_# [subnet_mask] IP_address_of_next_hop_neighbor [administrative_distance] [permanent]</span></div><div class="line">二、</div><div class="line">Router(config)<span class="meta"># ip route destination_network_# [subnet_mask] interface_to_exit [administrative_distance] [permanent]</span></div></pre></td></tr></table></figure>
-<p>###动态路由选择策略<br>动态路由选择策略是路由器进行自适应配置<strong>路由表</strong>，特点是:<strong>具有良好的自适应性，能及时适应网络状态的变化，但是较为复杂，而且开销较大</strong>。</p>
+<h3 id="动态路由选择策略"><a href="#动态路由选择策略" class="headerlink" title="动态路由选择策略"></a>动态路由选择策略</h3><p>动态路由选择策略是路由器进行自适应配置<strong>路由表</strong>，特点是:<strong>具有良好的自适应性，能及时适应网络状态的变化，但是较为复杂，而且开销较大</strong>。</p>
+<h2 id="自治系统-AS"><a href="#自治系统-AS" class="headerlink" title="自治系统(AS)"></a>自治系统(AS)</h2><ul>
+<li>由于互联网越来越大，路由器里的路由表也随之变大，早期路由表里存放着到达<strong>每一个网络</strong>的下一跳地址，但是路由表依旧很大，同时许多单位不愿意对外公开自己内部的网络拓扑结构，于是人们又对互联网再次进行了划分，将互联网划分成一个一个的<strong>自治系统</strong>，一个自治系统其实就是一个<strong>小的互联网</strong>，自治系统也可以说是<strong>单一的技术管理下的一组路由器</strong>,每一个自治系统由几个网络组成。</li>
+<li>在现在的互联网上一个大的<strong>ISP</strong>就是一个自治系统。</li>
+<li>一个自治系统内部需要确定一种路由选择协议（IGP），以确定分组在自治系统内部的路由，同时也需要一个外部的路由协议（EGP），以确定分组在AS之间的路由。</li>
+<li>自治系统之间的路由选择又称为:<strong>域间路由选择</strong>，而自治系统内部的路由选择又称为:<strong>域内路由选择</strong>。<br><strong>IGP和EGP是一种协议类型，不是一种协议</strong><br>###IGP(Interior Gateway Protocol)内部网关协议</li>
+<li>面对的是一个个网络的路由器<br><strong>典型协议:</strong></li>
+<li>RIP(Routing Infaction Protocol) 路由信息协议</li>
+<li>OSPF(Open Shortest Path First)开放式最短路径优先协议<br>###EGP(Exterior Gateway Protocol)外部网关协议</li>
+<li>面对的是一个个的小互联网的<strong>边界路由</strong><br><strong>典型协议:</strong></li>
+<li>BGP(Border Gateway Protocol) 边界网关协议</li>
+</ul>
+<p>###RIP</p>
+<ul>
+<li>原理：基于<strong>距离向量</strong>的内部网关协议。<strong>通过本地广播定期的(系统默认是30s)向相邻的路由器交换路由信息，通过距离向量来选择一条最优的线路(通过“跳数”来计算距离，初始相邻的网络跳数为1，每跨过一个路由器，跳数自动加一，但最多跨15个路由器，当跳数为16时就代表网络不可达(以后的直接相连的网络跳数不加一))</strong>。</li>
+</ul>
+<p>###距离向量算法</p>
+<ul>
+<li>对于来自相邻路由X的路由信息，先将下一条地址改为X，然后将跳数加一。 路由表里每一行都有三个项目:<strong>到达的网络N,距离是d，下一条路由器是X</strong>。</li>
+<li>if(路由表里没有到达这网络的路由信息)<br> 添加<br>else<br> if(到达该网络的下一条路由器为X)<br>   替换<br> else<br>   比较两条路由信息，保留距离较短的那条路由信息。</li>
+<li>若在三分钟内还没有收到相邻路由的更新路由信息，就将该路由标记为不可到达，即将距离改为<strong>16</strong>。</li>
+</ul>
 
         
         </div>
@@ -262,7 +283,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/07/RIP协议详解/" data-id="civ7o8jup0000d06xlk1whudk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/07/RIP协议详解/" data-id="civ7oucmn0022e96x3tft9fh5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -394,7 +415,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/03/VLAN-详解/" data-id="civ7o8juv0001d06xr8ny4xr0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/03/VLAN-详解/" data-id="civ7oa2p50006e96xgfrcms01" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -547,7 +568,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/02/traceroute工作原理/" data-id="civ7o8jw4000md06xi5p5h8tt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/02/traceroute工作原理/" data-id="civ7oa2px000ge96xnbiqgbrx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -684,7 +705,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/01/可重入函数/" data-id="civ7o8jw1000jd06xyxqfea2n" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/01/可重入函数/" data-id="civ7oa2qr000ue96xeedxv1vu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -838,7 +859,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/31/图的m着色问题/" data-id="civ7o8jx20018d06x9i24rec7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/31/图的m着色问题/" data-id="civ7oa2qv000xe96xhx7yejmv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -959,7 +980,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/30/文件系统/" data-id="civ7o8jyl001wd06xeu5n8mbm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/30/文件系统/" data-id="civ7oa2r50016e96xeuk4ot3x" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1097,7 +1118,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/30/溢出标志位OF/" data-id="civ7o8jwm000zd06xm3k9r1xi" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/30/溢出标志位OF/" data-id="civ7oa2r80019e96xo8inha4u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1224,7 +1245,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/17/git-版本控制/" data-id="civ7o8jvd0005d06xr26gv9jz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/17/git-版本控制/" data-id="civ7oa2pg0008e96xep6ezhvp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1351,7 +1372,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/16/软件工程-整体开发过程记录/" data-id="civ7o8jyi001vd06xm9edaqlj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/16/软件工程-整体开发过程记录/" data-id="civ7oa2rr001he96xp08tc1zt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1472,7 +1493,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/16/数据流图/" data-id="civ7o8jwh000wd06x3ag7ufdr" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/16/数据流图/" data-id="civ7oa2r30013e96xs5kiv63b" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
