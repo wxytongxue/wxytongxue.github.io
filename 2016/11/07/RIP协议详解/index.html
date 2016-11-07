@@ -3,14 +3,41 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Category: 技术 | 学而知码，写而造轮</title>
+    <title>RIP协议详解 | 学而知码，写而造轮</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="学而知码，写而造轮">
-<meta property="og:url" content="http://wxy-cs.com/categories/技术/index.html">
+    <meta name="description" content="##路由选择算法路由选择算法是计算机网络的核心部分，分为两类：
+
+静态路由选择策略
+动态路由选择策略
+
+###静态路由选择策略静态略有选择策略是人工进行配置路由表,特点是：不具有自适应性，不能及时适应网络状态的变化，但是简单，开销较小。
+配置命令:
+1234一、Router(config)# ip route destination_network_# [subnet_mask] IP_addre">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RIP协议详解">
+<meta property="og:url" content="http://wxy-cs.com/2016/11/07/RIP协议详解/index.html">
 <meta property="og:site_name" content="学而知码，写而造轮">
+<meta property="og:description" content="##路由选择算法路由选择算法是计算机网络的核心部分，分为两类：
+
+静态路由选择策略
+动态路由选择策略
+
+###静态路由选择策略静态略有选择策略是人工进行配置路由表,特点是：不具有自适应性，不能及时适应网络状态的变化，但是简单，开销较小。
+配置命令:
+1234一、Router(config)# ip route destination_network_# [subnet_mask] IP_addre">
+<meta property="og:image" content="http://i01.pictn.sogoucdn.com/58eac2e2cd3f330d">
+<meta property="og:updated_time" content="2016-11-07T06:12:39.732Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学而知码，写而造轮">
+<meta name="twitter:title" content="RIP协议详解">
+<meta name="twitter:description" content="##路由选择算法路由选择算法是计算机网络的核心部分，分为两类：
+
+静态路由选择策略
+动态路由选择策略
+
+###静态路由选择策略静态略有选择策略是人工进行配置路由表,特点是：不具有自适应性，不能及时适应网络状态的变化，但是简单，开销较小。
+配置命令:
+1234一、Router(config)# ip route destination_network_# [subnet_mask] IP_addre">
+<meta name="twitter:image" content="http://i01.pictn.sogoucdn.com/58eac2e2cd3f330d">
     
 
     
@@ -199,25 +226,21 @@
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-folder"></i></span>
-        <h1 class="title">技术</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-RIP协议详解" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/11/07/RIP协议详解/">RIP协议详解</a>
+        <h1 class="article-title" itemprop="name">
+            RIP协议详解
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2016/11/07/RIP协议详解/">
@@ -226,351 +249,181 @@
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/技术/">技术</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/计算机网络/">计算机网络</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/11/03/VLAN-详解/">VLAN 详解</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>##路由选择算法<br><strong>路由选择算法</strong>是计算机网络的核心部分，分为两类：</p>
+<ul>
+<li>静态路由选择策略</li>
+<li>动态路由选择策略</li>
+</ul>
+<p>###静态路由选择策略<br>静态略有选择策略是人工进行配置<strong>路由表</strong>,特点是：<strong>不具有自适应性，不能及时适应网络状态的变化，但是简单，开销较小</strong>。</p>
+<p><strong>配置命令:</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">一、</div><div class="line">Router(config)<span class="meta"># ip route destination_network_# [subnet_mask] IP_address_of_next_hop_neighbor [administrative_distance] [permanent]</span></div><div class="line">二、</div><div class="line">Router(config)<span class="meta"># ip route destination_network_# [subnet_mask] interface_to_exit [administrative_distance] [permanent]</span></div></pre></td></tr></table></figure>
+<p>###动态路由选择策略<br>动态路由选择策略是路由器进行自适应配置<strong>路由表</strong>，特点是:<strong>具有良好的自适应性，能及时适应网络状态的变化，但是较为复杂，而且开销较大</strong>。</p>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/11/03/VLAN-详解/">
-            <time datetime="2016-11-03T10:59:50.000Z" itemprop="datePublished">2016-11-03</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/计算机网络/">计算机网络</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/11/02/traceroute工作原理/">traceroute工作原理</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/11/02/traceroute工作原理/">
-            <time datetime="2016-11-02T04:42:31.000Z" itemprop="datePublished">2016-11-02</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
 
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/计算机网络/">计算机网络</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/11/01/可重入函数/">可重入函数</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/11/01/可重入函数/">
-            <time datetime="2016-11-01T07:09:23.000Z" itemprop="datePublished">2016-11-01</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/操作系统/">操作系统</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/10/31/图的m着色问题/">图的m着色问题</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/10/31/图的m着色问题/">
-            <time datetime="2016-10-31T06:39:29.000Z" itemprop="datePublished">2016-10-31</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/算法/">算法</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/10/13/尾递归/">尾递归</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/10/13/尾递归/">
-            <time datetime="2016-10-13T11:32:54.000Z" itemprop="datePublished">2016-10-13</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/技巧/">技巧</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/10/13/动态规划：金矿模型/">动态规划：金矿模型</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/10/13/动态规划：金矿模型/">
-            <time datetime="2016-10-13T04:18:51.000Z" itemprop="datePublished">2016-10-13</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/算法/">算法</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/10/12/贪心算法/">贪心算法</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/10/12/贪心算法/">
-            <time datetime="2016-10-12T11:13:44.000Z" itemprop="datePublished">2016-10-12</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/算法/">算法</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/10/11/动态规划-01背包问题/">动态规划-01背包问题</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/10/11/动态规划-01背包问题/">
-            <time datetime="2016-10-11T06:30:56.000Z" itemprop="datePublished">2016-10-11</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/算法/">算法</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/10/10/动态规划：从新手到专家/">动态规划：从新手到专家</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/10/10/动态规划：从新手到专家/">
-            <time datetime="2016-10-10T10:14:24.000Z" itemprop="datePublished">2016-10-10</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/算法/">算法</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
 </div>
 
-    <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/categories/技术/page/2/">2</a><a class="extend next" rel="next" href="/categories/技术/page/2/">Next &raquo;</a>
-    </nav>
+    <a data-url="http://wxy-cs.com/2016/11/07/RIP协议详解/" data-id="civ7o8jup0000d06xlk1whudk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://wxy-cs.com/2016/11/07/RIP协议详解/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/11/07/RIP协议详解/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/11/03/VLAN-详解/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">VLAN 详解</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2016/11/07/RIP协议详解/" data-title="RIP协议详解" data-url="http://wxy-cs.com/2016/11/07/RIP协议详解/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
