@@ -153,7 +153,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                25
+                26
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -200,6 +200,158 @@
 
             
             <section id="main">
+    <article id="post-整数划分" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/12/27/整数划分/">整数划分</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/12/27/整数划分/">
+            <time datetime="2016-12-27T01:20:14.000Z" itemprop="datePublished">2016-12-27</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/算法/">算法</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <ul>
+<li><p>整数划分问题是将一个整数n划分成：</p>
+<blockquote>
+<p>n=m1+m2+m3……mi</p>
+</blockquote>
+</li>
+<li><p>满足的条件为：</p>
+<blockquote>
+<p>1&lt;=mi&lt;=n</p>
+</blockquote>
+</li>
+<li><p>如果MAX{m1,m2……mi}&lt;=m ,就称它是属于n的一个m划分。</p>
+</li>
+<li><p>设f(n,m) 为整数n的m划分的分数。</p>
+</li>
+<li><p>分析：</p>
+<ul>
+<li>1.如果m=1,划分即为{1,1,1……1},  f(n,m)=1</li>
+<li>2.如果n=1,划分即为{1}， f(n,m)=1</li>
+<li>3.如果n=m<br>  (1)包含n的时候，划分即为{n} ,f(n,n)=1<br>  (2)不包含n的时候，f(n,n)=f(n,n-1)      //递归查看n的n-1划分<br>  所以f(n,n)=1 + f(n,n-1)</li>
+<li>4.如果n&lt;m,不可能有负数，所以即为f(n,n)</li>
+<li>5.如果n&gt;m<br>  (1)包含m的时候，划分即为{m,{x1,x2…..xi}},x1+x2+……xi=n-m, f(n,m)=f(n-m,m)<br>  (2)不包含m的时候，f(n,m)=f(n,m-1)<br>  所以f(n,m)=f(n-m,m) + f(n,m-1)</li>
+</ul>
+</li>
+</ul>
+<p><strong>TODO</strong><br>代码分析</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://wxy-cs.com/2016/12/27/整数划分/" data-id="cix6uc0mi001f9b6xutb4te45" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://wxy-cs.com/2016/12/27/整数划分/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/12/27/整数划分/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-单片机读取锁存器还是引脚问题" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -253,7 +405,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/12/25/单片机读取锁存器还是引脚问题/" data-id="cix4t9i9l000u2y6xmpfa58w0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/12/25/单片机读取锁存器还是引脚问题/" data-id="cix6uc0lr00159b6xmc4hyqur" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -388,7 +540,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/16/OSPF-协议详解/" data-id="cix4t9i3c00002y6x9l54mxac" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/16/OSPF-协议详解/" data-id="cix6uc0e600029b6xageoq7qz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -523,7 +675,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/16/RIP-坏消息传的慢/" data-id="cix4t9i4d00012y6xhkbm0ao5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/16/RIP-坏消息传的慢/" data-id="cix6uc0g200069b6xjm5vb9dj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -655,7 +807,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/14/分支限界法/" data-id="cix4t9i99000o2y6xx5zvt5o3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/14/分支限界法/" data-id="cix6uc0jx000r9b6xydd2a1n8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -794,7 +946,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/14/划分子网-子网号问题/" data-id="cix4t9ib200162y6xu34sl926" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/14/划分子网-子网号问题/" data-id="cix6uc0ki000u9b6x4777ctt5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -957,7 +1109,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/07/RIP协议详解/" data-id="cix4t9i8l000h2y6xdu94of0r" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/07/RIP协议详解/" data-id="cix6uc0jm000n9b6xf47802ai" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1089,7 +1241,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/03/VLAN-详解/" data-id="cix4t9i5g00042y6xnxemu5hz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/03/VLAN-详解/" data-id="cix6uc0hp000a9b6xn9onmyfc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1242,7 +1394,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/02/traceroute工作原理/" data-id="cix4t9i7b000a2y6xlgo9c2zf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/02/traceroute工作原理/" data-id="cix6uc0j6000k9b6xf8dj5dgn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1379,7 +1531,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/01/可重入函数/" data-id="cix4t9ia800102y6xwedzpneu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/01/可重入函数/" data-id="cix6uc0m000189b6x7lcitima" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1457,160 +1609,6 @@
 
 
 
-    <article id="post-图的m着色问题" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/10/31/图的m着色问题/">图的m着色问题</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/10/31/图的m着色问题/">
-            <time datetime="2016-10-31T06:39:29.000Z" itemprop="datePublished">2016-10-31</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/算法/">算法</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h2 id="四色定理"><a href="#四色定理" class="headerlink" title="四色定理"></a>四色定理</h2><p><img src="http://img1.gtimg.com/henan/pics/hv1/56/115/2093/136126706.png" alt=""><br><strong>四色定理又称四色猜想、四色问题，是世界三大数学猜想之一</strong>。四色定理的本质许多人认为是在平面或者球面无法构造五个或者五个以上两两相连的区域。这个概念实际上是错误的，因为有许多种方法在代数几何上可以完美的证明任意一个区域无法同时与其他四个任意区域两两相连。但实际上证明的时候会把区域之间相互重叠的关系否定掉。其本质在与地图上是否可以只用四种颜色着色，从而演变出一个几何上的数学问题，但之所以至今只能用计算机暴力证明，其根源仍然无法得知，有诸多的猜想，但却仍然是一个无法以书面简单证明来完成的难题。</p>
-<h2 id="可平面图"><a href="#可平面图" class="headerlink" title="可平面图"></a>可平面图</h2><p>一个图G，将它画在一个平面上，如果图G各个边不相交，只相交于顶点，则称图G为<strong>可平面图</strong>。<br><strong>可平面图</strong><br><img src="http://o77440kb4.bkt.clouddn.com/%E5%8F%AF%E5%B9%B3%E9%9D%A2%E5%9B%BE.png" alt="1"><br><strong>一般先把一个图转换成可平面图然后再进行研究着色问题。</strong></p>
-<h2 id="着色问题"><a href="#着色问题" class="headerlink" title="着色问题"></a>着色问题</h2><p>国王遗嘱;<br>    国王将国土分给五个儿子，五个儿子想各自立国，要求相互之间划清国界。</p>
-<p>经四色定理可知，只需四种颜色即可将国界划分清楚。如下图：<br><img src="http://o77440kb4.bkt.clouddn.com/%E7%9D%80%E8%89%B21.png" alt="着色1"></p>
-<p><strong>图的m着色问题：</strong><br>要求在无向图中，为各个顶点着色，相邻顶点不能着相同的颜色,求最少的颜色数m，m也称做该图的<strong>色数</strong>。<br><img src="http://o77440kb4.bkt.clouddn.com/%E7%9D%80%E8%89%B22.png" alt="着色2"></p>
-<h3 id="回溯法"><a href="#回溯法" class="headerlink" title="回溯法"></a>回溯法</h3><p>解空间：<br>设X[i] 为第i顶点的所着颜色，用1….m分别代表m种颜色，搜索空间为n元一维数组x[1],x[2]…..x[n]<br>取值范围:(m^n)<br>（1,1,1……1）…..(n,n,n……n)<br>解空间如下;(3个顶点，3种颜色)<br><img src="http://o77440kb4.bkt.clouddn.com/%E8%A7%A3%E7%A9%BA%E9%97%B4%E6%A0%91.png" alt="解空间树"></p>
-<p>先定义一个邻接矩阵A(A[i][j]=1 代表节点i和节点j有线段相连)<br><strong>判定条件：A[i][j]==1 &amp;&amp; X[i]!=X[j] 即可往下深度搜索，否则进行回溯或剪枝。(i,j为父节点，子节点)</strong></p>
-<h3 id="穷举法Welch-Powell法"><a href="#穷举法Welch-Powell法" class="headerlink" title="穷举法Welch Powell法"></a>穷举法Welch Powell法</h3><ul>
-<li>首先按各个节点的度从大到小排序（会出现度相同的节点，所以答案不唯一）</li>
-<li>给第一个节点选一种颜色着上，然后从大到小(度数)寻找与它不相邻的节点涂上相同的颜色</li>
-<li>然后再从头开始找未涂色节点，用另一种颜色，重复第二步,直到所有节点都涂上颜色为止 </li>
-</ul>
-<p><img src="http://o77440kb4.bkt.clouddn.com/%E7%A9%B7%E4%B8%BE%E7%9D%80%E8%89%B2.jpg" alt="穷举涂色"></p>
-<p>节点：1:红色</p>
-<p>节点：2:绿色</p>
-<p>节点：3:黄色</p>
-<p>节点：4:黄色</p>
-<p>节点：5:红色</p>
-<p>节点：6:绿色</p>
-<p>节点：7:绿色</p>
-<p>节点：8:黄色</p>
-<p>所以可以着三种颜色。</p>
-<p>注：以上图片均来自网络，文章参考自网络，如有侵权请及时告知，24小时内删除！</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://wxy-cs.com/2016/10/31/图的m着色问题/" data-id="cix4t9iam00132y6x2vrjs9hk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://wxy-cs.com/2016/10/31/图的m着色问题/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/31/图的m着色问题/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -1623,6 +1621,25 @@
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/27/整数划分/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://img3.imgtn.bdimg.com/it/u=4116709815,225978394&amp;fm=21&amp;gp=0.jpg)" alt="整数划分" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/12/27/整数划分/" class="title">整数划分</a></p>
+                            <p class="item-date"><time datetime="2016-12-27T01:20:14.000Z" itemprop="datePublished">2016-12-27</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1700,25 +1717,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/11/14/划分子网-子网号问题/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i0.sinaimg.cn/travel/2014/1215/U7398P704DT20141215153913.png)" alt="划分子网-子网号问题" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a></p>
-                            <p class="item-title"><a href="/2016/11/14/划分子网-子网号问题/" class="title">划分子网-子网号问题</a></p>
-                            <p class="item-date"><time datetime="2016-11-14T06:48:16.000Z" itemprop="datePublished">2016-11-14</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1737,7 +1735,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1746,7 +1744,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 

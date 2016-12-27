@@ -3,14 +3,74 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2016/10 | 学而知码，写而造轮</title>
+    <title>整数划分 | 学而知码，写而造轮</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="学而知码，写而造轮">
-<meta property="og:url" content="http://wxy-cs.com/archives/2016/10/page/2/index.html">
+    <meta name="description" content="整数划分问题是将一个整数n划分成：
+
+n=m1+m2+m3……mi
+
+
+满足的条件为：
+
+1&amp;lt;=mi&amp;lt;=n
+
+
+如果MAX{m1,m2……mi}&amp;lt;=m ,就称它是属于n的一个m划分。
+
+设f(n,m) 为整数n的m划分的分数。
+
+分析：
+
+1.如果m=1,划分即为{1,1,1……1},  f(n,m)=1
+2.如果n=1,划分即为{1}， f(n,m)=1
+3.如果n=m  (">
+<meta property="og:type" content="article">
+<meta property="og:title" content="整数划分">
+<meta property="og:url" content="http://wxy-cs.com/2016/12/27/整数划分/index.html">
 <meta property="og:site_name" content="学而知码，写而造轮">
+<meta property="og:description" content="整数划分问题是将一个整数n划分成：
+
+n=m1+m2+m3……mi
+
+
+满足的条件为：
+
+1&amp;lt;=mi&amp;lt;=n
+
+
+如果MAX{m1,m2……mi}&amp;lt;=m ,就称它是属于n的一个m划分。
+
+设f(n,m) 为整数n的m划分的分数。
+
+分析：
+
+1.如果m=1,划分即为{1,1,1……1},  f(n,m)=1
+2.如果n=1,划分即为{1}， f(n,m)=1
+3.如果n=m  (">
+<meta property="og:image" content="http://img3.imgtn.bdimg.com/it/u=4116709815,225978394&fm=21&gp=0.jpg">
+<meta property="og:updated_time" content="2016-12-27T01:35:44.873Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学而知码，写而造轮">
+<meta name="twitter:title" content="整数划分">
+<meta name="twitter:description" content="整数划分问题是将一个整数n划分成：
+
+n=m1+m2+m3……mi
+
+
+满足的条件为：
+
+1&amp;lt;=mi&amp;lt;=n
+
+
+如果MAX{m1,m2……mi}&amp;lt;=m ,就称它是属于n的一个m划分。
+
+设f(n,m) 为整数n的m划分的分数。
+
+分析：
+
+1.如果m=1,划分即为{1,1,1……1},  f(n,m)=1
+2.如果n=1,划分即为{1}， f(n,m)=1
+3.如果n=m  (">
+<meta name="twitter:image" content="http://img3.imgtn.bdimg.com/it/u=4116709815,225978394&fm=21&gp=0.jpg">
     
 
     
@@ -199,162 +259,216 @@
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2016</h1>
-            </div>
+            <section id="main"><article id="post-整数划分" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/10/12/贪心算法/">贪心算法</a>
+        <h1 class="article-title" itemprop="name">
+            整数划分
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/10/12/贪心算法/">
-            <time datetime="2016-10-12T11:13:44.000Z" itemprop="datePublished">2016-10-12</time>
+        <a href="/2016/12/27/整数划分/">
+            <time datetime="2016-12-27T01:20:14.000Z" itemprop="datePublished">2016-12-27</time>
         </a>
     </div>
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/算法/">算法</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/10/11/动态规划-01背包问题/">动态规划-01背包问题</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <ul>
+<li><p>整数划分问题是将一个整数n划分成：</p>
+<blockquote>
+<p>n=m1+m2+m3……mi</p>
+</blockquote>
+</li>
+<li><p>满足的条件为：</p>
+<blockquote>
+<p>1&lt;=mi&lt;=n</p>
+</blockquote>
+</li>
+<li><p>如果MAX{m1,m2……mi}&lt;=m ,就称它是属于n的一个m划分。</p>
+</li>
+<li><p>设f(n,m) 为整数n的m划分的分数。</p>
+</li>
+<li><p>分析：</p>
+<ul>
+<li>1.如果m=1,划分即为{1,1,1……1},  f(n,m)=1</li>
+<li>2.如果n=1,划分即为{1}， f(n,m)=1</li>
+<li>3.如果n=m<br>  (1)包含n的时候，划分即为{n} ,f(n,n)=1<br>  (2)不包含n的时候，f(n,n)=f(n,n-1)      //递归查看n的n-1划分<br>  所以f(n,n)=1 + f(n,n-1)</li>
+<li>4.如果n&lt;m,不可能有负数，所以即为f(n,n)</li>
+<li>5.如果n&gt;m<br>  (1)包含m的时候，划分即为{m,{x1,x2…..xi}},x1+x2+……xi=n-m, f(n,m)=f(n-m,m)<br>  (2)不包含m的时候，f(n,m)=f(n,m-1)<br>  所以f(n,m)=f(n-m,m) + f(n,m-1)</li>
+</ul>
+</li>
+</ul>
+<p><strong>TODO</strong><br>代码分析</p>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/10/11/动态规划-01背包问题/">
-            <time datetime="2016-10-11T06:30:56.000Z" itemprop="datePublished">2016-10-11</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/算法/">算法</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/10/10/动态规划：从新手到专家/">动态规划：从新手到专家</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/10/10/动态规划：从新手到专家/">
-            <time datetime="2016-10-10T10:14:24.000Z" itemprop="datePublished">2016-10-10</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
 
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/算法/">算法</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2016/10/10/Dijkstra-迪杰斯特拉-算法/">Dijkstra(迪杰斯特拉)算法</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/10/10/Dijkstra-迪杰斯特拉-算法/">
-            <time datetime="2016-10-10T07:31:18.000Z" itemprop="datePublished">2016-10-10</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/算法/">算法</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
 </div>
 
-    <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2016/10/">&laquo; Prev</a><a class="page-number" href="/archives/2016/10/">1</a><span class="page-number current">2</span>
-    </nav>
+    <a data-url="http://wxy-cs.com/2016/12/27/整数划分/" data-id="cix6uc0mi001f9b6xutb4te45" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://wxy-cs.com/2016/12/27/整数划分/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/12/27/整数划分/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2016/12/25/单片机读取锁存器还是引脚问题/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">单片机读取锁存器还是引脚问题</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div class="ds-thread" data-thread-key="2016/12/27/整数划分/" data-title="整数划分" data-url="http://wxy-cs.com/2016/12/27/整数划分/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
