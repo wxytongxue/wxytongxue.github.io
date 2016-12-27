@@ -153,7 +153,7 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                26
+                27
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -200,6 +200,168 @@
 
             
             <section id="main">
+    <article id="post-汉诺塔问题详解" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/12/27/汉诺塔问题详解/">汉诺塔问题详解</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/12/27/汉诺塔问题详解/">
+            <time datetime="2016-12-27T01:55:36.000Z" itemprop="datePublished">2016-12-27</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/算法/">算法</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="问题说明"><a href="#问题说明" class="headerlink" title="问题说明"></a>问题说明</h2><p>问题出自古印度（一说西藏）。某神庙有三根细柱，64个大小不等、中心有孔的金盘套在柱上，构成梵塔。僧侣日夜不息地将圆盘从一柱移到另一柱，规则是每次只移一个盘，大盘不能放到小盘上。开始时圆盘从大到小套在一根柱上，据说所有圆盘都搬到另一根柱时世界就要毁灭。</p>
+<h2 id="规则说明"><a href="#规则说明" class="headerlink" title="规则说明"></a>规则说明</h2><p>设a,b,c是3个塔座。开始时，在塔座a上有一叠共n个圆盘，这些圆盘自下而上，由大到小地叠在一起。各圆盘从小到大编号为1,2,…,n,现要求将塔座a上的这一叠圆盘移到塔座b上，并仍按同样顺序叠置。在移动圆盘时应遵守以下移动规则：<br>规则1：每次只能移动1个圆盘；<br>规则2：任何时刻都不允许将较大的圆盘压在较小的圆盘之上；<br>规则3：在满足移动规则1和2的前提下，可将圆盘移至a,b,c中任一塔座上</p>
+<p>##　问题分析</p>
+<ul>
+<li>if n == 1<br>  直接将盘子从ａ移动到ｃ即可</li>
+<li>if n == 2<br>  <img src="http://image.lxway.com/upload/0/3e/03eb88fcd81450992b1d3acfa423b6ac_thumb.png" alt="汉诺塔１"></li>
+<li>if n== 3<br>  <img src="http://newtonblogimg.qiniudn.com/Hanoi%20Tower%20Solving.png" alt="汉诺塔２"></li>
+</ul>
+<h3 id="文字分析"><a href="#文字分析" class="headerlink" title="文字分析"></a>文字分析</h3><ul>
+<li><p>if n== 1</p>
+<p>setp1:a–&gt;c</p>
+</li>
+</ul>
+<ul>
+<li><p>if n == 2</p>
+<p>setp:1 a–&gt;b</p>
+<p>setp:2 a–&gt;c</p>
+<p>setp3: b–&gt;c</p>
+</li>
+</ul>
+<ul>
+<li><p>if n　==　3</p>
+<p> setp1:a–&gt;b</p>
+<pre><code>a--&gt;b
+</code></pre><p> setp2:a–&gt;c</p>
+<p> setp3:b–&gt;c</p>
+<pre><code>b--&gt;c
+</code></pre></li>
+</ul>
+<blockquote>
+<p>总结可得，都是经过三个步骤：<br>    1.mov a to b  (前n-1个盘子)<br>    2.mov a to c  (最后一个大盘子)<br>    3.mov b to c  (前n-1个盘子)</p>
+</blockquote>
+<p>可以看出步骤１和步骤２移动的原理和盘子数是相同的所以可以归纳出：<br>    H(n)=2*H(n-1) + 1  (1 为移动最大盘子的次数)<br>上面的式子已经形成了一个递归试。</p>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>　　当进行第n-1次移动时，无论如何移动，这n-1个盘子都要比上一次递归的那个最大的盘子要小，所以就可以抽象的忽略那个最大的盘子，来进行移动这个n-1个盘子。</p>
+<p><strong>TODO</strong><br>1.代码分析</p>
+<p>2.配图转移到图床</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://wxy-cs.com/2016/12/27/汉诺塔问题详解/" data-id="cix6vpm0e001ui66xqtp2rgus" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://wxy-cs.com/2016/12/27/汉诺塔问题详解/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/12/27/汉诺塔问题详解/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-整数划分" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -274,7 +436,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/12/27/整数划分/" data-id="cix6uc0mi001f9b6xutb4te45" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/12/27/整数划分/" data-id="cix6vpm04001oi66xeik9ozyz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -405,7 +567,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/12/25/单片机读取锁存器还是引脚问题/" data-id="cix6uc0lr00159b6xmc4hyqur" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/12/25/单片机读取锁存器还是引脚问题/" data-id="cix6vplzc0016i66xoi05o8jj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -540,7 +702,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/16/OSPF-协议详解/" data-id="cix6uc0e600029b6xageoq7qz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/16/OSPF-协议详解/" data-id="cix6vplwh0002i66xtc9ovypl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -675,7 +837,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/16/RIP-坏消息传的慢/" data-id="cix6uc0g200069b6xjm5vb9dj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/16/RIP-坏消息传的慢/" data-id="cix6vplx40006i66x9uaax9gk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -807,7 +969,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/14/分支限界法/" data-id="cix6uc0jx000r9b6xydd2a1n8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/14/分支限界法/" data-id="cix6vplyk000pi66xusc0bzkh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -946,7 +1108,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/14/划分子网-子网号问题/" data-id="cix6uc0ki000u9b6x4777ctt5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/14/划分子网-子网号问题/" data-id="cix6vplyq000si66x5olf4fcv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1109,7 +1271,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/07/RIP协议详解/" data-id="cix6uc0jm000n9b6xf47802ai" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/07/RIP协议详解/" data-id="cix6vplx90008i66x4993zjtc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1241,7 +1403,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/03/VLAN-详解/" data-id="cix6uc0hp000a9b6xn9onmyfc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/03/VLAN-详解/" data-id="cix6vplxf0009i66xpngjd147" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1394,7 +1556,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/02/traceroute工作原理/" data-id="cix6uc0j6000k9b6xf8dj5dgn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/02/traceroute工作原理/" data-id="cix6vplyg000mi66xme5marhc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1472,143 +1634,6 @@
 
 
 
-    <article id="post-可重入函数" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/11/01/可重入函数/">可重入函数</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/11/01/可重入函数/">
-            <time datetime="2016-11-01T07:09:23.000Z" itemprop="datePublished">2016-11-01</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/操作系统/">操作系统</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>In computing, a computer program or subroutine is called reentrant if it can be interrupted in the middle of its execution, and then be safely called again (“re-entered”) before its previous invocations complete execution. The interruption could be caused by an internal action such as a jump or call, or by an external action such as a hardware interrupt or signal. Once the reentered invocation completes, the previous invocations will resume correct execution.</p>
-<p>This definition originates from single-threaded programming environments where the flow of control could be interrupted by a hardware interrupt and transferred to an interrupt service routine (ISR). Any subroutine used by the ISR that could potentially have been executing when the interrupt was triggered should be reentrant. Often, subroutines accessible via the operating system kernel are not reentrant. Hence, interrupt service routines are limited in the actions they can perform; for instance, they are usually restricted from accessing the file system and sometimes even from allocating memory.</p>
-<p>A subroutine that is directly or indirectly recursive should be reentrant. This policy is partially enforced by structured programming languages.[citation needed] However a subroutine can fail to be reentrant if it relies on a global variable to remain unchanged but that variable is modified when the subroutine is recursively invoked.</p>
-<p>This definition of reentrancy differs from that of thread-safety in multi-threaded environments. A reentrant subroutine can achieve thread-safety,[1] but being reentrant alone might not be sufficient to be thread-safe in all situations. Conversely, thread-safe code does not necessarily have to be reentrant (see below for examples).</p>
-<p>Other terms used for reentrant programs include “pure procedure” or “sharable code”</p>
-<p>以上是来自维基百科的介绍。<br><strong>大意是：</strong><br>在计算机里，程序或子程序在执行期间可被中断，然后在以前调用执行完成的情况下可再次被安全的调用叫做<strong>可重入</strong>，中断可以是内部事件引起的如跳转或调用,或外部事件如硬件中断或信号引起的。一旦再次调用完成，以前的调用依旧能正确的执行。<br>这种定义来源于单线程编程环境中控制流可以被硬件中断给中断然后转移去中断服务子程序。任何被ISR使用的子程序在中断被触发的时候</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://wxy-cs.com/2016/11/01/可重入函数/" data-id="cix6uc0m000189b6x7lcitima" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://wxy-cs.com/2016/11/01/可重入函数/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/11/01/可重入函数/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -1621,6 +1646,25 @@
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/12/27/汉诺塔问题详解/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://img3.imgtn.bdimg.com/it/u=4116709815,225978394&amp;fm=21&amp;gp=0.jpg)" alt="汉诺塔问题详解" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/12/27/汉诺塔问题详解/" class="title">汉诺塔问题详解</a></p>
+                            <p class="item-date"><time datetime="2016-12-27T01:55:36.000Z" itemprop="datePublished">2016-12-27</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1698,25 +1742,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/11/14/分支限界法/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://images.pexels.com/photos/177625/pexels-photo-177625.jpeg?w=940&amp;h=650&amp;auto=compress&amp;cs=tinysrgb)" alt="分支限界法" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a></p>
-                            <p class="item-title"><a href="/2016/11/14/分支限界法/" class="title">分支限界法</a></p>
-                            <p class="item-date"><time datetime="2016-11-14T09:24:55.000Z" itemprop="datePublished">2016-11-14</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1735,7 +1760,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1744,7 +1769,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
