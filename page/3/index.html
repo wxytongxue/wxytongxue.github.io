@@ -153,11 +153,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                28
+                29
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                11
+                12
                 <span>tags</span>
             </div>
         </div>
@@ -200,6 +200,159 @@
 
             
             <section id="main">
+    <article id="post-闭包" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/10/14/闭包/">闭包</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/10/14/闭包/">
+            <time datetime="2016-10-14T13:42:58.000Z" itemprop="datePublished">2016-10-14</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><strong>1.python一切皆对象</strong><br>在python里所有的变量都是对象的引用<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">List=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]       　<span class="comment"># 列表</span></div><div class="line">Tuple=(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)      　<span class="comment"># 元组</span></div><div class="line">Dict=&#123;<span class="string">'A'</span>:<span class="number">1</span>,<span class="string">'B'</span>:<span class="number">2</span>&#125;　 <span class="comment"># 字典</span></div></pre></td></tr></table></figure></p>
+<p><img src="http://o77440kb4.bkt.clouddn.com/1.png" alt="1"><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name)</span>:</span></div><div class="line">        self.name=name</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">work</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">print</span> name</div><div class="line">        </div><div class="line">me=Myclass(<span class="string">'xx'</span>)</div></pre></td></tr></table></figure></p>
+<p><img src="http://o77440kb4.bkt.clouddn.com/2.png" alt="2"></p>
+<p><strong>2.函数是第一类对象</strong><br>第一类对象是指，该对象<strong>可以赋值给其它标识符，可以作为函数的参数，可以作为返回值返回</strong>。　</p>
+<ul>
+<li>函数赋值给其它标识符<br>　(函数名是函数对象的引用)<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a,b)</span>:</span></div><div class="line">    <span class="keyword">return</span> a+b</div><div class="line">add=func</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://o77440kb4.bkt.clouddn.com/3.png" alt="3"></p>
+<ul>
+<li>作为函数参数<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(f)</span>:</span></div><div class="line">    <span class="keyword">return</span> f()</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">print</span> <span class="number">1</span>+<span class="number">1</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://o77440kb4.bkt.clouddn.com/4.png" alt="4"></p>
+<ul>
+<li>作为返回值<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(a,b)</span>:</span></div><div class="line">    <span class="keyword">return</span> a*b</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(f)</span>:</span></div><div class="line">    <span class="keyword">return</span> f(<span class="number">1</span>,<span class="number">1</span>)</div><div class="line"></div><div class="line"><span class="keyword">print</span> func(f)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>函数对象与函数调用</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">    <span class="keyword">return</span> <span class="string">"hello,word!"</span></div><div class="line">t1=func</div><div class="line">t2=func()</div><div class="line"></div><div class="line"><span class="keyword">print</span> type(t1)  <span class="comment">#function</span></div><div class="line"><span class="keyword">print</span> type(t2)  <span class="comment">#str</span></div></pre></td></tr></table></figure></p>
+<p><strong>t1是函数对象赋值</strong><br><strong>t2是函数调用返回值的赋值</strong></p>
+<h3 id="闭包含义"><a href="#闭包含义" class="headerlink" title="闭包含义"></a>闭包含义</h3><p>闭包就是<strong>保存代码和代码(python里是以函数来体现的)的上下文环境，将其打包为一个对象(包含环境变量)。</strong>是函数式编程的重要语法。<br><strong>例一</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">    x=<span class="number">1</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner_func</span><span class="params">()</span>:</span></div><div class="line">	<span class="keyword">return</span> x</div><div class="line">    <span class="keyword">return</span> inner_func</div><div class="line">x=<span class="number">2</span></div><div class="line">f1=func()</div><div class="line"><span class="keyword">print</span> f1()</div><div class="line"></div><div class="line"><span class="comment">#执行结果：</span></div><div class="line">&gt;&gt;&gt;<span class="number">1</span></div></pre></td></tr></table></figure></p>
+<p>inner_func 函数保存了前一层嵌套函数的ｘ</p>
+<p><strong>例二</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a,b)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></div><div class="line">	<span class="keyword">return</span> a*x+b</div><div class="line">f1=func(<span class="number">1</span>,<span class="number">2</span>)</div><div class="line">f2=func(<span class="number">2</span>,<span class="number">3</span>)</div><div class="line"></div><div class="line">f1(<span class="number">5</span>)</div><div class="line">f2(<span class="number">6</span>)</div></pre></td></tr></table></figure></p>
+<p>ｆ函数保存了上一层嵌套函数的参数里的ａ,ｂ</p>
+<h3 id="命名空间（作用域）"><a href="#命名空间（作用域）" class="headerlink" title="命名空间（作用域）"></a>命名空间（作用域）</h3><p>在ｃ语言中不同模块的相同名字的变量有时会发生冲突，所以在ｃ++中引入<strong>namespace</strong>，在python中也存在命名空间。<br><strong>在不同命名空间中，可以区分相同名字的变量</strong><br>在python中因为<strong>一切皆为对象</strong>，所以<strong>变量名称都是对对象的引用</strong>，所以python的命名空间就是一个字典，在字典里存着<strong>变量名和对象的映射关系</strong>。因此python解释器查找变量名就是在命名空间中查找<strong>键值对</strong>,那么按照啥顺序在不同的命名空间里查找那？这就引出了<strong>LEGB法则</strong></p>
+<h3 id="LEGB法则"><a href="#LEGB法则" class="headerlink" title="LEGB法则"></a>LEGB法则</h3><p>L–Local  函数内的命名空间<br>E–Enclosing function locals 外边嵌套的函数的命名空间<br>G–Global 本模块内的命名空间<br>B–Builtin python内置模块的命名空间</p>
+<p><strong>LEGB就是用来规定查找命名空间顺序的！</strong></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://wxy-cs.com/2016/10/14/闭包/" data-id="cixmm1hob002aks6xkeb9qr47" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://wxy-cs.com/2016/10/14/闭包/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/10/14/闭包/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-尾递归" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -267,7 +420,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/13/尾递归/" data-id="cixdd4qd200224s6xk5cn6a7z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/13/尾递归/" data-id="cixmm1hla0019ks6xnf40fgq0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -523,7 +676,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/" data-id="cixdd4q9c001i4s6xqrcf4tca" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/13/动态规划：金矿模型/" data-id="cixmm1hkr0015ks6xolmtxfj8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -673,7 +826,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/12/贪心算法/" data-id="cixdd4qc1001z4s6xdmrfccs0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/12/贪心算法/" data-id="cixmm1hna001yks6xdktlc2s9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -821,7 +974,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/" data-id="cixdd4q3v000n4s6xyw5qo5y2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/11/动态规划-01背包问题/" data-id="cixmm1hkc000yks6x2xooemp0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1013,7 +1166,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/" data-id="cixdd4q42000q4s6xwuglfgxx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/10/动态规划：从新手到专家/" data-id="cixmm1hk0000vks6x6pvatwmo" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1152,7 +1305,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/" data-id="cixdd4pyv00004s6xpzmmgm31" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/10/10/Dijkstra-迪杰斯特拉-算法/" data-id="cixmm1he60000ks6x0ebg7etl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1287,7 +1440,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/05/18/sql-server/" data-id="cixdd4q29000a4s6xy02shu63" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/05/18/sql-server/" data-id="cixmm1him000lks6xri7bspi0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1493,7 +1646,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/05/18/maltivalued-dependence/" data-id="cixdd4q1f00064s6x2cf378vb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/05/18/maltivalued-dependence/" data-id="cixmm1hi9000iks6xqcu22qfk" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1587,6 +1740,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/01/07/苏格拉底三段论/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://img3.imgtn.bdimg.com/it/u=4116709815,225978394&amp;fm=21&amp;gp=0.jpg)" alt="苏格拉底三段论" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/01/07/苏格拉底三段论/" class="title">苏格拉底三段论</a></p>
+                            <p class="item-date"><time datetime="2017-01-07T02:14:01.000Z" itemprop="datePublished">2017-01-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2016/12/31/2017/" class="thumbnail">
     
     
@@ -1660,25 +1832,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/11/16/OSPF-协议详解/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://images.pexels.com/photos/89820/pexels-photo-89820.jpeg?w=940&amp;h=650&amp;auto=compress&amp;cs=tinysrgb)" alt="OSPF 协议详解" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a></p>
-                            <p class="item-title"><a href="/2016/11/16/OSPF-协议详解/" class="title">OSPF 协议详解</a></p>
-                            <p class="item-date"><time datetime="2016-11-16T04:25:36.000Z" itemprop="datePublished">2016-11-16</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1697,7 +1850,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1706,7 +1859,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/离散数学/">离散数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1715,7 +1868,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/单片机/" style="font-size: 10px;">单片机</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 13.33px;">数据库</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/计划/" style="font-size: 10px;">计划</a> <a href="/tags/计算机网络/" style="font-size: 16.67px;">计算机网络</a> <a href="/tags/软件工程/" style="font-size: 10px;">软件工程</a>
+            <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/单片机/" style="font-size: 10px;">单片机</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 13.33px;">数据库</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/离散数学/" style="font-size: 10px;">离散数学</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/计划/" style="font-size: 10px;">计划</a> <a href="/tags/计算机网络/" style="font-size: 16.67px;">计算机网络</a> <a href="/tags/软件工程/" style="font-size: 10px;">软件工程</a>
         </div>
     </div>
 
@@ -1743,7 +1896,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2016 WXY<br>
+            &copy; 2017 WXY<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
         </div>
     </div>

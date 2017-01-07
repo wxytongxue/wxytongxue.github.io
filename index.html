@@ -153,11 +153,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                28
+                29
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                11
+                12
                 <span>tags</span>
             </div>
         </div>
@@ -200,6 +200,152 @@
 
             
             <section id="main">
+    <article id="post-苏格拉底三段论" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/01/07/苏格拉底三段论/">苏格拉底三段论</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/01/07/苏格拉底三段论/">
+            <time datetime="2017-01-07T02:14:01.000Z" itemprop="datePublished">2017-01-07</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/离散数学/">离散数学</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><div class=".justified-gallery"><img src="https://images.pexels.com/photos/280274/pexels-photo-280274.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"></div></p>
+<h2 id="苏格拉底三段论"><a href="#苏格拉底三段论" class="headerlink" title="苏格拉底三段论"></a>苏格拉底三段论</h2><ul>
+<li>所有人都是要死的</li>
+<li>苏格拉底是人</li>
+<li>所以苏格拉底是要死的</li>
+</ul>
+<h3 id="命题推理"><a href="#命题推理" class="headerlink" title="命题推理"></a>命题推理</h3><ul>
+<li>P:所有人都是要死的</li>
+<li>Q:苏格拉底是人</li>
+<li>R:所以苏格拉底是要死的</li>
+</ul>
+<blockquote>
+<p>P^Q→R</p>
+</blockquote>
+<p>当P和Q都为1时，R为0时，P^Q→R为0，我们一般认为是正确的。<br>但是根据命题逻辑，这却是错误的。所以无法用命题逻辑进行表示。</p>
+<ul>
+<li>由于原子命题是命题中的最小单位，无法再分，所以无法考虑命题间的内在联系和数量关系。</li>
+</ul>
+<p>###　例子<br><strong>“所有人都是要死的”</strong>和<strong>“苏格拉底是要死的”</strong>，这两个命题是有联系的，它俩都表示<strong>“ｘ是要死的”</strong>这个性质。在命题逻辑中却需要两个命题表示。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p><strong>使用一阶谓词逻辑</strong></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://wxy-cs.com/2017/01/07/苏格拉底三段论/" data-id="cixmm39kj0000lm6xoajlnqab" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://wxy-cs.com/2017/01/07/苏格拉底三段论/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2017/01/07/苏格拉底三段论/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-2017" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -253,7 +399,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/12/31/2017/" data-id="cixdd4q3c000g4s6xkc5aukw5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/12/31/2017/" data-id="cixmm1hes0002ks6xqa8laiwq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -415,7 +561,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/12/27/汉诺塔问题详解/" data-id="cixdd4q9j001l4s6xxsa6t7m5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/12/27/汉诺塔问题详解/" data-id="cixmm1hmu001sks6x2j6hgd6g" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -567,7 +713,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/12/27/整数划分/" data-id="cixdd4qdj00244s6x6duru0n3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/12/27/整数划分/" data-id="cixmm1hmc001jks6x832uimog" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -698,7 +844,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/12/25/单片机读取锁存器还是引脚问题/" data-id="cixdd4q5a00114s6xgnxjdxmd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/12/25/单片机读取锁存器还是引脚问题/" data-id="cixmm1hle001cks6xir4p8jbg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -833,7 +979,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/16/OSPF-协议详解/" data-id="cixdd4q4t000x4s6xvb55z8x5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/16/OSPF-协议详解/" data-id="cixmm1hgt0008ks6xovex7iq3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -968,7 +1114,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/16/RIP-坏消息传的慢/" data-id="cixdd4pzu00014s6xj3x0b71f" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/16/RIP-坏消息传的慢/" data-id="cixmm1hg60006ks6xkutjjd7p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1100,7 +1246,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/14/分支限界法/" data-id="cixdd4q3n000j4s6xqi0i9d1l" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/14/分支限界法/" data-id="cixmm1hn8001wks6x8r1m41ii" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1239,7 +1385,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/14/划分子网-子网号问题/" data-id="cixdd4q4b000u4s6xhz0pfxl3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/14/划分子网-子网号问题/" data-id="cixmm1hjo000rks6x1gl3pxf6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1402,7 +1548,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/07/RIP协议详解/" data-id="cixdd4q0i00044s6x5hbn5kbj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/07/RIP协议详解/" data-id="cixmm1hht000dks6xrz7nh8xa" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1480,138 +1626,6 @@
 
 
 
-    <article id="post-VLAN-详解" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/11/03/VLAN-详解/">VLAN 详解</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/11/03/VLAN-详解/">
-            <time datetime="2016-11-03T10:59:50.000Z" itemprop="datePublished">2016-11-03</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/计算机网络/">计算机网络</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p><strong>写的非常不错</strong><br><a href="http://wenku.baidu.com/link?url=4baUoMAf8zoVNsumKhJDDB1He_wsjMiB1EHMGpPaiHFXyRgFwNp3oPmKSENy1pPMctm1UvcAYi_eaZeY3knDwMbp-51ts-IDD9OOdwRscu_" target="_blank" rel="external">图文并茂VLAN全接触(完整版)</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://wxy-cs.com/2016/11/03/VLAN-详解/" data-id="cixdd4q2o000c4s6x0xzrsl02" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://wxy-cs.com/2016/11/03/VLAN-详解/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/11/03/VLAN-详解/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -1624,6 +1638,25 @@
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/07/苏格拉底三段论/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://img3.imgtn.bdimg.com/it/u=4116709815,225978394&amp;fm=21&amp;gp=0.jpg)" alt="苏格拉底三段论" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/01/07/苏格拉底三段论/" class="title">苏格拉底三段论</a></p>
+                            <p class="item-date"><time datetime="2017-01-07T02:14:01.000Z" itemprop="datePublished">2017-01-07</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1701,25 +1734,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/11/16/OSPF-协议详解/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://images.pexels.com/photos/89820/pexels-photo-89820.jpeg?w=940&amp;h=650&amp;auto=compress&amp;cs=tinysrgb)" alt="OSPF 协议详解" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a></p>
-                            <p class="item-title"><a href="/2016/11/16/OSPF-协议详解/" class="title">OSPF 协议详解</a></p>
-                            <p class="item-date"><time datetime="2016-11-16T04:25:36.000Z" itemprop="datePublished">2016-11-16</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1738,7 +1752,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1747,7 +1761,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/离散数学/">离散数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1756,7 +1770,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/单片机/" style="font-size: 10px;">单片机</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 13.33px;">数据库</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/计划/" style="font-size: 10px;">计划</a> <a href="/tags/计算机网络/" style="font-size: 16.67px;">计算机网络</a> <a href="/tags/软件工程/" style="font-size: 10px;">软件工程</a>
+            <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/单片机/" style="font-size: 10px;">单片机</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 13.33px;">数据库</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/离散数学/" style="font-size: 10px;">离散数学</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/计划/" style="font-size: 10px;">计划</a> <a href="/tags/计算机网络/" style="font-size: 16.67px;">计算机网络</a> <a href="/tags/软件工程/" style="font-size: 10px;">软件工程</a>
         </div>
     </div>
 
@@ -1784,7 +1798,7 @@
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2016 WXY<br>
+            &copy; 2017 WXY<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
         </div>
     </div>
