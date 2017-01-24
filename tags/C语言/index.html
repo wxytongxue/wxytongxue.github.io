@@ -3,23 +3,14 @@
 <head>
     <meta charset="utf-8">
     
-    <title>汉诺塔问题详解 | 学而知码，写而造轮</title>
+    <title>Tag: C语言 | 学而知码，写而造轮</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="问题说明问题出自古印度（一说西藏）。某神庙有三根细柱，64个大小不等、中心有孔的金盘套在柱上，构成梵塔。僧侣日夜不息地将圆盘从一柱移到另一柱，规则是每次只移一个盘，大盘不能放到小盘上。开始时圆盘从大到小套在一根柱上，据说所有圆盘都搬到另一根柱时世界就要毁灭。
-规则说明设a,b,c是3个塔座。开始时，在塔座a上有一叠共n个圆盘，这些圆盘自下而上，由大到小地叠在一起。各圆盘从小到大编号为1,2,…,n">
-<meta property="og:type" content="article">
-<meta property="og:title" content="汉诺塔问题详解">
-<meta property="og:url" content="http://wxy-cs.com/2016/12/27/汉诺塔问题详解/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="学而知码，写而造轮">
+<meta property="og:url" content="http://wxy-cs.com/tags/C语言/index.html">
 <meta property="og:site_name" content="学而知码，写而造轮">
-<meta property="og:description" content="问题说明问题出自古印度（一说西藏）。某神庙有三根细柱，64个大小不等、中心有孔的金盘套在柱上，构成梵塔。僧侣日夜不息地将圆盘从一柱移到另一柱，规则是每次只移一个盘，大盘不能放到小盘上。开始时圆盘从大到小套在一根柱上，据说所有圆盘都搬到另一根柱时世界就要毁灭。
-规则说明设a,b,c是3个塔座。开始时，在塔座a上有一叠共n个圆盘，这些圆盘自下而上，由大到小地叠在一起。各圆盘从小到大编号为1,2,…,n">
-<meta property="og:image" content="http://img3.imgtn.bdimg.com/it/u=4116709815,225978394&fm=21&gp=0.jpg">
-<meta property="og:updated_time" content="2016-12-27T02:15:48.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="汉诺塔问题详解">
-<meta name="twitter:description" content="问题说明问题出自古印度（一说西藏）。某神庙有三根细柱，64个大小不等、中心有孔的金盘套在柱上，构成梵塔。僧侣日夜不息地将圆盘从一柱移到另一柱，规则是每次只移一个盘，大盘不能放到小盘上。开始时圆盘从大到小套在一根柱上，据说所有圆盘都搬到另一根柱时世界就要毁灭。
-规则说明设a,b,c是3个塔座。开始时，在塔座a上有一叠共n个圆盘，这些圆盘自下而上，由大到小地叠在一起。各圆盘从小到大编号为1,2,…,n">
-<meta name="twitter:image" content="http://img3.imgtn.bdimg.com/it/u=4116709815,225978394&fm=21&gp=0.jpg">
+<meta name="twitter:title" content="学而知码，写而造轮">
     
 
     
@@ -208,235 +199,45 @@
 </aside>
 
             
-            <section id="main"><article id="post-汉诺塔问题详解" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
+            <section id="main">
+<div class="timeline timeline-wrap">
+    <div class="timeline-row timeline-row-major">
+        <span class="node"><i class="fa fa-tag"></i></span>
+        <h1 class="title">#C语言</h1>
+    </div>
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
                 
     
-        <h1 class="article-title" itemprop="name">
-            汉诺塔问题详解
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2017/01/24/c语言位数问题/">c语言位数问题</a>
         </h1>
     
 
-                
-                    <div class="article-meta">
-                        
+                <div class="article-meta">
+                    
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/12/27/汉诺塔问题详解/">
-            <time datetime="2016-12-27T01:55:36.000Z" itemprop="datePublished">2016-12-27</time>
+        <a href="/2017/01/24/c语言位数问题/">
+            <time datetime="2017-01-24T10:57:52.000Z" itemprop="datePublished">2017-01-24</time>
         </a>
     </div>
 
 
-                        
-                        
+                    
+                    
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/算法/">算法</a>
+        <a class="tag-link" href="/tags/C语言/">C语言</a>
     </div>
 
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h2 id="问题说明"><a href="#问题说明" class="headerlink" title="问题说明"></a>问题说明</h2><p>问题出自古印度（一说西藏）。某神庙有三根细柱，64个大小不等、中心有孔的金盘套在柱上，构成梵塔。僧侣日夜不息地将圆盘从一柱移到另一柱，规则是每次只移一个盘，大盘不能放到小盘上。开始时圆盘从大到小套在一根柱上，据说所有圆盘都搬到另一根柱时世界就要毁灭。</p>
-<h2 id="规则说明"><a href="#规则说明" class="headerlink" title="规则说明"></a>规则说明</h2><p>设a,b,c是3个塔座。开始时，在塔座a上有一叠共n个圆盘，这些圆盘自下而上，由大到小地叠在一起。各圆盘从小到大编号为1,2,…,n,现要求将塔座a上的这一叠圆盘移到塔座b上，并仍按同样顺序叠置。在移动圆盘时应遵守以下移动规则：<br>规则1：每次只能移动1个圆盘；<br>规则2：任何时刻都不允许将较大的圆盘压在较小的圆盘之上；<br>规则3：在满足移动规则1和2的前提下，可将圆盘移至a,b,c中任一塔座上</p>
-<p>##　问题分析</p>
-<ul>
-<li>if n == 1<br>  直接将盘子从ａ移动到ｃ即可</li>
-<li>if n == 2<br>  <img src="http://image.lxway.com/upload/0/3e/03eb88fcd81450992b1d3acfa423b6ac_thumb.png" alt="汉诺塔１"></li>
-<li>if n== 3<br>  <img src="http://newtonblogimg.qiniudn.com/Hanoi%20Tower%20Solving.png" alt="汉诺塔２"></li>
-</ul>
-<h3 id="文字分析"><a href="#文字分析" class="headerlink" title="文字分析"></a>文字分析</h3><ul>
-<li><p>if n== 1</p>
-<p>setp1:a–&gt;c</p>
-</li>
-</ul>
-<ul>
-<li><p>if n == 2</p>
-<p>setp:1 a–&gt;b</p>
-<p>setp:2 a–&gt;c</p>
-<p>setp3: b–&gt;c</p>
-</li>
-</ul>
-<ul>
-<li><p>if n　==　3</p>
-<p> setp1:a–&gt;b</p>
-<pre><code>a--&gt;b
-</code></pre><p> setp2:a–&gt;c</p>
-<p> setp3:b–&gt;c</p>
-<pre><code>b--&gt;c
-</code></pre></li>
-</ul>
-<blockquote>
-<p>总结可得，都是经过三个步骤：<br>    1.mov a to b  (前n-1个盘子)<br>    2.mov a to c  (最后一个大盘子)<br>    3.mov b to c  (前n-1个盘子)</p>
-</blockquote>
-<p>可以看出步骤１和步骤２移动的原理和盘子数是相同的所以可以归纳出：<br>    H(n)=2*H(n-1) + 1  (1 为移动最大盘子的次数)<br>上面的式子已经形成了一个递归试。</p>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>　　当进行第n-1次移动时，无论如何移动，这n-1个盘子都要比上一次递归的那个最大的盘子要小，所以就可以抽象的忽略那个最大的盘子，来进行移动这个n-1个盘子。</p>
-<p><strong>TODO</strong><br>1.代码分析</p>
-<p>2.配图转移到图床</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://wxy-cs.com/2016/12/27/汉诺塔问题详解/" data-id="ciybevka4001o6o6xci93ys3o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://wxy-cs.com/2016/12/27/汉诺塔问题详解/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/12/27/汉诺塔问题详解/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2016/12/31/2017/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    2017
-                
+                </div>
             </div>
-        </a>
+        </div>
     
-    
-        <a href="/2016/12/27/整数划分/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">整数划分</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    <section id="comments">
-    
-        
-    <div class="ds-thread" data-thread-key="2016/12/27/汉诺塔问题详解/" data-title="汉诺塔问题详解" data-url="http://wxy-cs.com/2016/12/27/汉诺塔问题详解/"></div>
-    <style>
-        #ds-thread #ds-reset .ds-textarea-wrapper {
-            background: none;
-        }
-        #ds-reset .ds-avatar img {
-            box-shadow: none;
-        }
-        #ds-reset .ds-gradient-bg {
-            background: #f7f7f7;
-        }
-        #ds-thread #ds-reset li.ds-tab a {
-            border-radius: 3px;
-        }
-        #ds-thread #ds-reset .ds-post-button {
-            color: white;
-            border: none;
-            box-shadow: none;
-            background: #d32;
-            text-shadow: none;
-            font-weight: normal;
-            font-family: 'Microsoft Yahei';
-        }
-        #ds-thread #ds-reset .ds-post-button:hover {
-            color: white;
-            background: #DE594C;
-        }
-        #ds-thread #ds-reset .ds-post-button:active {
-            background: #d32;
-        }
-        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
-            color: white;
-            background: #d32;
-            box-shadow: none;
-            text-shadow: none;
-            font-weight: normal;
-        }
-    </style>
-
-    
-    </section>
-
+</div>
 </section>
             
                 <aside id="sidebar">

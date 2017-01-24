@@ -153,11 +153,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                29
+                30
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                12
+                13
                 <span>tags</span>
             </div>
         </div>
@@ -200,6 +200,140 @@
 
             
             <section id="main">
+    <article id="post-c语言位数问题" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/01/24/c语言位数问题/">c语言位数问题</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/01/24/c语言位数问题/">
+            <time datetime="2017-01-24T10:57:52.000Z" itemprop="datePublished">2017-01-24</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/C语言/">C语言</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <div class=".justified-gallery"><img src="https://images.pexels.com/photos/165840/pexels-photo-165840.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"></div>
+
+<p><strong>16位编译器</strong><br>char ：1个字节<br>char*(即指针变量): 2个字节<br>short int : 2个字节<br>int：  2个字节<br>unsigned int : 2个字节<br>float:  4个字节<br>double:   8个字节<br>long:   4个字节<br>long long:  8个字节<br>unsigned long:  4个字节</p>
+<p><strong>32位编译器</strong></p>
+<p>char ：1个字节<br>char*（即指针变量）: 4个字节（32位的寻址空间是2^32, 即32个bit，也就是4个字节。同理64位编译器）<br>short int : 2个字节</p>
+<p>int：  4个字节<br>unsigned int : 4个字节<br>float:  4个字节<br>double:   8个字节<br>long:   4个字节<br>long long:  8个字节<br>unsigned long:  4个字节</p>
+<p><strong>64位编译器</strong><br>char ：1个字节<br>char*(即指针变量): 8个字节<br>short int : 2个字节<br>int：  4个字节<br>unsigned int : 4个字节<br>float:  4个字节<br>double:   8个字节<br>long:   8个字节<br>long long:  8个字节<br>unsigned long:  8个字节 </p>
+<p><strong>指针的位数与机器位数有关</strong></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://wxy-cs.com/2017/01/24/c语言位数问题/" data-id="ciybevk7f00066o6xrfk3rvl9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://wxy-cs.com/2017/01/24/c语言位数问题/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2017/01/24/c语言位数问题/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-苏格拉底三段论" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -268,7 +402,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2017/01/07/苏格拉底三段论/" data-id="cixmm39kj0000lm6xoajlnqab" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2017/01/07/苏格拉底三段论/" data-id="ciybevkax001y6o6xbpqg87c0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -399,7 +533,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/12/31/2017/" data-id="cixmm1hes0002ks6xqa8laiwq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/12/31/2017/" data-id="ciybevk5t00006o6xbitqx3ya" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -561,7 +695,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/12/27/汉诺塔问题详解/" data-id="cixmm1hmu001sks6x2j6hgd6g" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/12/27/汉诺塔问题详解/" data-id="ciybevka4001o6o6xci93ys3o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -713,7 +847,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/12/27/整数划分/" data-id="cixmm1hmc001jks6x832uimog" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/12/27/整数划分/" data-id="ciybevkaj001r6o6xxll2z8b8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -844,7 +978,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/12/25/单片机读取锁存器还是引脚问题/" data-id="cixmm1hle001cks6xir4p8jbg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/12/25/单片机读取锁存器还是引脚问题/" data-id="ciybevk9900176o6xmvtixv5i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -979,7 +1113,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/16/OSPF-协议详解/" data-id="cixmm1hgt0008ks6xovex7iq3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/16/OSPF-协议详解/" data-id="ciybevk6200016o6xfegoyd1c" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1114,7 +1248,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/16/RIP-坏消息传的慢/" data-id="cixmm1hg60006ks6xkutjjd7p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/16/RIP-坏消息传的慢/" data-id="ciybevk6v00036o6xfaq5wj7q" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1246,7 +1380,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/14/分支限界法/" data-id="cixmm1hn8001wks6x8r1m41ii" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/14/分支限界法/" data-id="ciybevk86000k6o6x84dqq0tt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1385,7 +1519,7 @@
 
 </div>
 
-    <a data-url="http://wxy-cs.com/2016/11/14/划分子网-子网号问题/" data-id="cixmm1hjo000rks6x1gl3pxf6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://wxy-cs.com/2016/11/14/划分子网-子网号问题/" data-id="ciybevk8g000q6o6xo3bvfu1a" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1463,169 +1597,6 @@
 
 
 
-    <article id="post-RIP协议详解" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/11/07/RIP协议详解/">RIP协议详解</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/11/07/RIP协议详解/">
-            <time datetime="2016-11-07T05:49:39.000Z" itemprop="datePublished">2016-11-07</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/技术/">技术</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/计算机网络/">计算机网络</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p><div class=".justified-gallery"><img src="https://images.pexels.com/photos/213338/pexels-photo-213338.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"></div></p>
-<h2 id="路由选择算法"><a href="#路由选择算法" class="headerlink" title="路由选择算法"></a>路由选择算法</h2><p><strong>路由选择算法</strong>是计算机网络的核心部分，分为两类：</p>
-<ul>
-<li>静态路由选择策略</li>
-<li>动态路由选择策略</li>
-</ul>
-<h3 id="静态路由选择策略"><a href="#静态路由选择策略" class="headerlink" title="静态路由选择策略"></a>静态路由选择策略</h3><p>静态略有选择策略是人工进行配置<strong>路由表</strong>,特点是：<strong>不具有自适应性，不能及时适应网络状态的变化，但是简单，开销较小</strong>。</p>
-<p><strong>配置命令:</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">一、</div><div class="line">Router(config)<span class="meta"># ip route destination_network_# [subnet_mask] IP_address_of_next_hop_neighbor [administrative_distance] [permanent]</span></div><div class="line">二、</div><div class="line">Router(config)<span class="meta"># ip route destination_network_# [subnet_mask] interface_to_exit [administrative_distance] [permanent]</span></div></pre></td></tr></table></figure>
-<h3 id="动态路由选择策略"><a href="#动态路由选择策略" class="headerlink" title="动态路由选择策略"></a>动态路由选择策略</h3><p>动态路由选择策略是路由器进行自适应配置<strong>路由表</strong>，特点是:<strong>具有良好的自适应性，能及时适应网络状态的变化，但是较为复杂，而且开销较大</strong>。</p>
-<h2 id="自治系统-AS"><a href="#自治系统-AS" class="headerlink" title="自治系统(AS)"></a>自治系统(AS)</h2><ul>
-<li>由于互联网越来越大，路由器里的路由表也随之变大，早期路由表里存放着到达<strong>每一个网络</strong>的下一跳地址，但是路由表依旧很大，同时许多单位不愿意对外公开自己内部的网络拓扑结构，于是人们又对互联网再次进行了划分，将互联网划分成一个一个的<strong>自治系统</strong>，一个自治系统其实就是一个<strong>小的互联网</strong>，自治系统也可以说是<strong>单一的技术管理下的一组路由器</strong>,每一个自治系统由几个网络组成。</li>
-<li>在现在的互联网上一个大的<strong>ISP</strong>就是一个自治系统。</li>
-<li>一个自治系统内部需要确定一种路由选择协议（IGP），以确定分组在自治系统内部的路由，同时也需要一个外部的路由协议（EGP），以确定分组在AS之间的路由。</li>
-<li>自治系统之间的路由选择又称为:<strong>域间路由选择</strong>，而自治系统内部的路由选择又称为:<strong>域内路由选择</strong>。<br><strong>IGP和EGP是一种协议类型，不是一种协议</strong><h3 id="IGP-Interior-Gateway-Protocol-内部网关协议"><a href="#IGP-Interior-Gateway-Protocol-内部网关协议" class="headerlink" title="IGP(Interior Gateway Protocol)内部网关协议"></a>IGP(Interior Gateway Protocol)内部网关协议</h3></li>
-<li>面对的是一个个网络的路由器<br><strong>典型协议:</strong></li>
-<li>RIP(Routing Infaction Protocol) 路由信息协议</li>
-<li>OSPF(Open Shortest Path First)开放式最短路径优先协议<h3 id="EGP-Exterior-Gateway-Protocol-外部网关协议"><a href="#EGP-Exterior-Gateway-Protocol-外部网关协议" class="headerlink" title="EGP(Exterior Gateway Protocol)外部网关协议"></a>EGP(Exterior Gateway Protocol)外部网关协议</h3></li>
-<li>面对的是一个个的小互联网的<strong>边界路由</strong><br><strong>典型协议:</strong></li>
-<li>BGP(Border Gateway Protocol) 边界网关协议</li>
-</ul>
-<h3 id="RIP"><a href="#RIP" class="headerlink" title="RIP"></a>RIP</h3><ul>
-<li>原理：基于<strong>距离向量</strong>的内部网关协议。<strong>通过本地广播定期的(系统默认是30s)向相邻的路由器交换路由信息，通过距离向量来选择一条最优的线路(通过“跳数”来计算距离，初始相邻的网络跳数为1，每跨过一个路由器，跳数自动加一，但最多跨15个路由器，当跳数为16时就代表网络不可达(以后的直接相连的网络跳数不加一))</strong>。</li>
-</ul>
-<h3 id="距离向量算法"><a href="#距离向量算法" class="headerlink" title="距离向量算法"></a>距离向量算法</h3><ul>
-<li>对于来自相邻路由X的路由信息，先将下一条地址改为X，然后将跳数加一。 路由表里每一行都有三个项目:<strong>到达的网络N,距离是d，下一条路由器是X</strong>。</li>
-<li><p>步骤：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(路由表里没有到达这网络的路由信息)</div><div class="line">	添加</div><div class="line">   <span class="keyword">else</span></div><div class="line">	<span class="keyword">if</span>(到达该网络的下一条路由器为X)</div><div class="line">	  替换</div><div class="line">	<span class="keyword">else</span></div><div class="line">	  比较两条路由信息，保留距离较短的那条路由信息。</div></pre></td></tr></table></figure>
-</li>
-<li><p>若在三分钟内还没有收到相邻路由的更新路由信息，就将该路由标记为不可到达，即将距离改为<strong>16</strong>。</p>
-</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://wxy-cs.com/2016/11/07/RIP协议详解/" data-id="cixmm1hht000dks6xrz7nh8xa" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://wxy-cs.com/2016/11/07/RIP协议详解/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://wxy-cs.com/2016/11/07/RIP协议详解/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -1638,6 +1609,25 @@
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/24/c语言位数问题/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://i0.sinaimg.cn/travel/2014/1215/U7398P704DT20141215153913.png)" alt="c语言位数问题" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/01/24/c语言位数问题/" class="title">c语言位数问题</a></p>
+                            <p class="item-date"><time datetime="2017-01-24T10:57:52.000Z" itemprop="datePublished">2017-01-24</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1715,25 +1705,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/12/25/单片机读取锁存器还是引脚问题/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://img2.ph.126.net/iACD23QQSjl16UenBiw0Jw==/6598252841168625161.jpg)" alt="单片机读取锁存器还是引脚问题" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a></p>
-                            <p class="item-title"><a href="/2016/12/25/单片机读取锁存器还是引脚问题/" class="title">单片机读取锁存器还是引脚问题</a></p>
-                            <p class="item-date"><time datetime="2016-12-25T15:28:43.000Z" itemprop="datePublished">2016-12-25</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1752,7 +1723,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">October 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1761,7 +1732,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/离散数学/">离散数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C语言/">C语言</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单片机/">单片机</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/汇编/">汇编</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/离散数学/">离散数学</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计划/">计划</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络/">计算机网络</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/软件工程/">软件工程</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1770,7 +1741,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/单片机/" style="font-size: 10px;">单片机</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 13.33px;">数据库</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/离散数学/" style="font-size: 10px;">离散数学</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/计划/" style="font-size: 10px;">计划</a> <a href="/tags/计算机网络/" style="font-size: 16.67px;">计算机网络</a> <a href="/tags/软件工程/" style="font-size: 10px;">软件工程</a>
+            <a href="/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a> <a href="/tags/单片机/" style="font-size: 10px;">单片机</a> <a href="/tags/技巧/" style="font-size: 10px;">技巧</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 13.33px;">数据库</a> <a href="/tags/汇编/" style="font-size: 10px;">汇编</a> <a href="/tags/离散数学/" style="font-size: 10px;">离散数学</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/计划/" style="font-size: 10px;">计划</a> <a href="/tags/计算机网络/" style="font-size: 16.67px;">计算机网络</a> <a href="/tags/软件工程/" style="font-size: 10px;">软件工程</a>
         </div>
     </div>
 
